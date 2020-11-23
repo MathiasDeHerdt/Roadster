@@ -48,7 +48,7 @@ const drawXYaxes = function(){
     // Draw the x-axis
     ctx.beginPath();
     ctx.setLineDash([5, 1]);
-    ctx.strokeStyle = "White";
+    ctx.strokeStyle = "transparant";
     // ctx.strokeStyle = "Transparant";
     ctx.moveTo(0, zerocoy);
     ctx.lineTo(zerocox*2, zerocoy);
@@ -136,8 +136,8 @@ var Earth = function(){
     const EarthMajorAxisDivided = EarthMajorAxisKM / DivisionFactor
     const EarthMinorAxisDivided = EarthMinorAxisKM / DivisionFactor
 
-    drawPlanetOrbit("Earth","Blue", EarthCentralPointXDivided, EarthMajorAxisDivided, EarthMinorAxisDivided, cox, coy)
-    drawPlanet("Earth", "Blue", 61, cox, coy, le)
+    drawPlanetOrbit("Earth","#6483ff", EarthCentralPointXDivided, EarthMajorAxisDivided, EarthMinorAxisDivided, cox, coy)
+    drawPlanet("Earth", "#6483ff", 61, cox, coy, le)
 }
 
 var Mars = function(){
@@ -185,7 +185,7 @@ const Roadster = function(apoapsis, periapsis, eccentricity){
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOMContentLoaded")
     drawXYaxes()
-    getRoadsterData()
+    // getRoadsterData()
     Earth()
     Mars()    
 });
