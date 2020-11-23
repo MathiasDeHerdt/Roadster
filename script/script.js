@@ -7,18 +7,18 @@ const coy = total;
 const le = total; 
 
 async function getRoadsterData(){
+    // api ophalen en inlezen
     const response = await fetch(API_URL);
     const data = await response.json();
     
+    // elementen uit api halen
     const name = data.name;
+    const date = data.launch_date_utc;
     const norad = data.norad_id;
     const epoch = data.epoch_jd;
-    //const apoapsis = data.apoapsis_au;
-    //const periapsis = data.periapsis_au;
     const apoapsis = data.periapsis_au;
     const periapsis = data.apoapsis_au;
     const periapsis_arg = data.periapsis_arg;
-
     const eccentricity = data.eccentricity;
     const inclination = data.inclination;
     const longitude = data.longitude;
@@ -27,16 +27,28 @@ async function getRoadsterData(){
     const Edistance = data.earth_distance_km;
     const Mdistance = data.mars_distance_km;
 
-    console.log("longitude = " + longitude)
-    console.log("periapsis_arg = "+ periapsis_arg)
-    console.log("inclination = " + inclination)
-    console.log("Edistance = " + Edistance)
-    console.log("Mdistance = " + Mdistance)
+    // Datum yyyy-mm-dd converteren naar dd-mm-yyyy
+    const dateSplit = date.split('T')[0]
+    const dateOld = dateSplit.split('-')
+    const newDate = [dateOld[2],dateOld[1],dateOld[0]].join("-");
 
+    // gegevens klaarzetten om door te sturen naar html
+    const formattedSpeed = `Speed: ${Math.round((speed*100)/100)} km/u`
+    const formattedDate = `Launch date: ${newDate}`
+    const formattedDays = `Days in space: ${Math.floor(days)} days`
+    const formattedEarthDistance = `Distance from Earth: ${Math.floor(Edistance)} km`
+    const formattedMarsDistance = `Distance from Mars: ${Math.floor(Mdistance)} km`
+
+    // gegevens naar html doorsturen
+    document.getElementById('Speed_Roadster').innerHTML = formattedSpeed;
+    document.getElementById('LaunchDate_Roadster').innerHTML = formattedDate
+    document.getElementById('Days_Roadster').innerHTML = formattedDays
+    document.getElementById('DistanceEarth').innerHTML = formattedEarthDistance
+    document.getElementById('DistanceMars').innerHTML = formattedMarsDistance
+
+    // roadster zijn baan maken met gegevens uit api
     Roadster(apoapsis, periapsis, eccentricity)
 }
-
-
 
 const drawXYaxes = function(){
     const canvas = document.getElementById('canvas');
@@ -71,10 +83,8 @@ const drawPlanet = function(planet, clr, angle, cox, coy, le){
     const zerocoy = coy
  
     //angle = angle + 45
-
     angle = angle * (-1)
-    console.log("angle = " + angle)
-
+    // console.log("angle = " + angle)
 
     length =  le;
 
@@ -96,16 +106,16 @@ const drawPlanetOrbit = function(Planet, Clr, X, MaA, MiA, cox, coy){
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     
-    console.log(X)
-    console.log(MaA)
-    console.log(MiA)
+    // console.log(X)
+    // console.log(MaA)
+    // console.log(MiA)
 
     const zerocox = cox
     const zerocoy = coy
 
     X = zerocox + X
     Y = zerocoy
-    console.log(X)
+    // console.log(X)
     
     ctx.setLineDash([1, 0]);
     ctx.strokeStyle = Clr;
@@ -181,11 +191,22 @@ const Roadster = function(apoapsis, periapsis, eccentricity){
     drawPlanet("Roadster", "violet", 316-270, cox, coy, le)
 }
 
+const WelcomeMessage = function(){
+    console.log("Project: Where is Roadster")
+    console.log("Author: Mathias De Herdt")
+    console.log("Class: 2MCT3")
+    console.log("Module: Interaction Design")
+    console.log("Year: 2020-2021")
+    console.log("School: Howest Kortrijk")
+
+}
+
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOMContentLoaded")
+    WelcomeMessage()
     drawXYaxes()
-    // getRoadsterData()
+    getRoadsterData()
     Earth()
-    Mars()    
+    Mars()
 });

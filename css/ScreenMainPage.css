@@ -245,16 +245,19 @@ h2 {
 
 ul {
   list-style: none;
-  margin: 0;
+  margin: 1rem;
   padding: 0;
-  width: 15rem;
+  width: 25rem;
   margin: 1.25rem;
 }
 ul li {
+  font-size: 24px;
   display: block;
-  height: 20px;
-  padding: 5px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  height: 40px;
+  padding: 10px;
+  padding-left: 2.1rem;
+
+  border-top: 0.125rem;
   transition: all 0.5s;
   opacity: 0;
   line-height: 1;
@@ -267,7 +270,7 @@ label:before {
   display: inline-block;
   content: '';
   box-shadow: 0px -5px 0px 0px white, 0px -10px 0px 0px white;
-  margin-right: 10px;
+  margin-right: 20px;
   transition: all 0.5s;
   position: relative;
   opacity: 1;
@@ -276,7 +279,7 @@ label {
   background-color: transparent;
   display: block;
   align-items: flex-end;
-  padding: 0.5rem;
+  padding: 0.2rem;
   color: white;
   cursor: pointer;
 }
@@ -291,4 +294,10 @@ input[type='checkbox'] {
 }
 #collapse:checked + label:before {
   position: relative;
+}
+
+.c-hamburger {
+  padding-top: 3rem;
+  grid-row-start: 1;
+  grid-column-start: 1;
 }
