@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-    <script src="/script/script.js"></script>
+    
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/ScreenMainPage.css">
 
+    <script src="/script/script.js"></script>
 
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/RoadsterFav.png">
 
@@ -20,8 +21,8 @@
         <h1>Where is Roadster</h1>
         <h2>Roadster's position in our Galaxy</h2>
         <div class="c-solarsystem"> 
-            <canvas id="canvas" width="600" height="600"></canvas>
-            <svg class="c-solarsystem__sun" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+            <canvas class="c-canvas" id="canvas" width="600" height="600"></canvas>
+            <svg class="c-solarsystem__sun" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50">
                     
                 <g id="Group_5" data-name="Group 5" transform="translate(-2596 946)">
                     <circle id="SUN" cx="25" cy="25" r="25" transform="translate(2596 -946)" fill="#ffe037"/>
@@ -30,6 +31,7 @@
                 </g>
             </svg>
         </div>
+
         <div class="c-tekst">
             <div class="c-tekst__earth">
                 <p>Earth's orbit</p>
@@ -38,18 +40,15 @@
                 <p>Mars' orbit</p>
             </div>
             <div  class="c-tekst__roadster">
-                <p>Roadsters' orbit</p>
+                <p>Roadster's orbit</p>
             </div>
-            
-
-
         </div>
+
         <div class="c-tekst__lower">
             <p>Earth's position</p>
             <p>Mars' position</p>
-            <p>Roadsters' position</p>
+            <p>Roadster's position</p>
         </div>
-
     </div>
 </body>
 </html>
