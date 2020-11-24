@@ -33,11 +33,17 @@ async function getRoadsterData(){
     const newDate = [dateOld[2],dateOld[1],dateOld[0]].join("-");
 
     // gegevens klaarzetten om door te sturen naar html
-    const formattedSpeed = `Speed: ${Math.round((speed*100)/100)} km/u`
-    const formattedDate = `Launch date: ${newDate}`
-    const formattedDays = `Days in space: ${Math.floor(days)} days`
-    const formattedEarthDistance = `Distance from Earth: ${Math.floor(Edistance)} km`
-    const formattedMarsDistance = `Distance from Mars: ${Math.floor(Mdistance)} km`
+    // const formattedSpeed = `Speed: ${Math.round((speed*100)/100)} km/u`
+    // const formattedDate = `Launch date: ${newDate}`
+    // const formattedDays = `Days in space: ${Math.floor(days)} days`
+    // const formattedEarthDistance = `Distance from Earth: ${Math.floor(Edistance)} km`
+    // const formattedMarsDistance = `Distance from Mars: ${Math.floor(Mdistance)} km`
+
+    const formattedSpeed = `${Math.round((speed*100)/100)} km/u`
+    const formattedDate = `${newDate}`
+    const formattedDays = `${Math.floor(days)} days`
+    const formattedEarthDistance = `${Math.floor(Edistance)} km`
+    const formattedMarsDistance = `${Math.floor(Mdistance)} km`
 
     // gegevens naar html doorsturen
     document.getElementById('Speed_Roadster').innerHTML = formattedSpeed;
