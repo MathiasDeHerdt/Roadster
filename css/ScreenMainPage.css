@@ -247,10 +247,13 @@ h2 {
   }
   .c-hamburger {
     padding-top: 0rem;
-    grid-row-start: 1 !important;
+    grid-row-start: 2 !important;
+
     /* display: flex; */
-    /* align-items: center;
-    align-content: center; */
+    align-items: center !important;
+    align-content: center !important;
+
+    
   }
   ul {
     list-style: none;
@@ -271,6 +274,7 @@ h2 {
   .c-label {
     font-size: 16px !important;
     color: limegreen !important;
+    
   }
 
   label:before {
