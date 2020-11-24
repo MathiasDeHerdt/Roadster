@@ -170,7 +170,7 @@ h2 {
   .c-app {
     display: grid;
 
-    grid-template-columns: 17.5rem;
+    grid-template-columns: 16rem !important;
     grid-template-rows: 2rem 2rem 20rem 6.5rem;
   }
 
@@ -224,9 +224,10 @@ h2 {
   }
 
   .c-tekst {
-    font-size: 16px;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    font-size: 14px;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    max-width: 14.5rem !important;
     grid-column-start: 1;
     grid-row-start: 4;
     display: flex;
@@ -234,9 +235,10 @@ h2 {
   }
 
   .c-tekst__lower {
-    font-size: 16px;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    font-size: 14px;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    max-width: 14.5rem !important;
     grid-column-start: 1;
     grid-row-start: 4;
     display: flex;
