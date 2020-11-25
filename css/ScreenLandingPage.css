@@ -121,6 +121,7 @@ h1 {
     grid-template-columns: 100px;
     grid-template-rows: 500px;
   }
+
   h1 {
     padding-top: 90px;
     padding-left: 80px;
@@ -140,12 +141,21 @@ h1 {
     line-height: 1;
   }
 
+  .c-tekst__main {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+  }
+
   .c-tekst__lower {
     grid-row-start: 2;
     grid-column-start: 1;
-    align-items: center;
-    display: flex;
   }
+  .c-input {
+    width: 10rem !important;
+  }
+  /* .c-input__button {
+    margin-left: 20rem !important;
+  } */
 }
 
 .c-input {
@@ -174,6 +184,7 @@ h1 {
 
   appearance: none;
   width: 50;
+  margin-left: 0.25rem;
 
   border: 1px solid var(--input-borderColor, var(--global-input-borderColor));
   border-radius: var(--global-borderRadius);
