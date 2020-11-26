@@ -52,8 +52,7 @@ html {
 }
 
 body {
-  /* background-image: url(/img/SRBackgroud.png); */
-  background-image: url(/static/img/SRBackgroud.png);
+  background-image: url(/img/SRBackgroud.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
