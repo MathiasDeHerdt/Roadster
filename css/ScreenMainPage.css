@@ -43,7 +43,7 @@
 
 html {
   color: var(--global-fontcolor); /* font color */
-  background-color: black;
+  /* background-color: black; */
 
   font-size: var(--global-font-size-regular);
   font-family: arial, Helvetica, sans-serif;
@@ -56,7 +56,7 @@ html {
 }
 
 body {
-  background-image: url(/img/StarBackground2.jpg);
+  background-image: url(../img/StarBackground2.jpg);
 
   background-position: center center;
   background-repeat: no-repeat;

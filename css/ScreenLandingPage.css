@@ -39,7 +39,7 @@
 
 html {
   color: var(--global-fontcolor); /* font color */
-  background-color: black;
+  /* background-color: black; */
 
   font-size: var(--global-font-size-regular);
   font-family: arial, Helvetica, sans-serif;
@@ -52,7 +52,8 @@ html {
 }
 
 body {
-  background-image: url(/img/SRBackgroud.png);
+  /* background-image: url(/img/SRBackgroud.png); */
+  background-image: url(../img/SRBackgroud.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -116,7 +117,7 @@ h1 {
 
 @media only screen and (max-width: 767px) {
   body {
-    background-image: url(/img/SpaceRoadsterBackgroundV2Mobile.png);
+    background-image: url(../img/SpaceRoadsterBackgroundV2Mobile.png);
   }
   .c-app {
     grid-template-columns: 100px;
