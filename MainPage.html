@@ -21,26 +21,27 @@
     <div class="c-app">
         <h1>Where is Roadster</h1>
         <h2>The Solar System</h2>
-        <div class="c-hamburger">
+
+        <div class="c-hamburger" style="z-index: 2;">
             
-            <ul>
+            <ul >
                 <input type="checkbox" id="collapse"/> 
-                <label class="c-label" for="collapse">  Roadster info </label>
+                <label class="c-label" for="collapse"> Roadster info </label>
                 
-                <li style="font-weight: bold;">Speed</li>
-                <li id="Speed_Roadster" style="color: gray;">Speed </li>
+                <li style="font-weight: bold;">Speed:</li>
+                <li id="Speed_Roadster" style="color: #6483ff;">Speed </li>
                 <li style="font-weight: bold;">Launch Date:</li>
-                <li id="LaunchDate_Roadster" style="color: gray;">Date </li>
+                <li id="LaunchDate_Roadster" style="color: #6483ff;">Date </li>
                 <li style="font-weight: bold;">Days in space:</li>
-                <li id="Days_Roadster" style="color: gray;">Days</li>
+                <li id="Days_Roadster" style="color: #6483ff;">Days</li>
                 <li style="font-weight: bold;">Distance from Earth: </li>
-                <li id="DistanceEarth" style="color: gray;">Distance E</li>
+                <li id="DistanceEarth" style="color: #6483ff;">Distance E</li>
                 <li style="font-weight: bold;">Distance from Mars: </li>
-                <li id="DistanceMars" style="color: gray;">Distance M</li>
+                <li id="DistanceMars" style="color: #6483ff;">Distance M</li>
             </ul>
         </div>
 
-        <div class="c-solarsystem"> 
+        <div class="c-solarsystem" style="z-index: 1;"> 
 
             <canvas class="c-canvas" id="canvas" width="600" height="600"></canvas>
             
