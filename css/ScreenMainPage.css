@@ -3,6 +3,8 @@
   --color-dark: #171717;
   --color-white: #fff;
   --color-light-blue: #6483ff;
+  --color-mars-red: red;
+  --color-roadster-purple: violet;
 
   --global-backgroundcolor: var(--color-dark);
   --global-fontcolor: var(--color-light);
@@ -146,7 +148,7 @@ h2 {
 .c-tekst__mars {
   height: 0.1rem;
   border: 0;
-  border-top: 0.1rem solid red;
+  border-top: 0.1rem solid var(--color-mars-red);
   margin: 1em 0;
   padding: 0;
 }
@@ -154,9 +156,33 @@ h2 {
 .c-tekst__roadster {
   height: 0.1rem;
   border: 0;
-  border-top: 0.1rem solid violet;
+  border-top: 0.1rem solid var(--color-roadster-purple);
   margin: 1em 0;
   padding: 0;
+}
+
+.c-circle-earth {
+  border-radius: 50%;
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-left: 2.7rem;
+  background-color: var(--color-light-blue);
+}
+
+.c-circle-mars {
+  border-radius: 50%;
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: var(--color-mars-red);
+  margin-left: 2.5rem;
+}
+
+.c-circle-roadster {
+  border-radius: 50%;
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: var(--color-roadster-purple);
+  margin-left: 4rem;
 }
 
 .c-canvas {
@@ -295,6 +321,16 @@ h2 {
     padding: 0.2rem;
     color: white;
     cursor: pointer;
+  }
+
+  .c-circle-earth {
+    margin-left: 1.7rem;
+  }
+  .c-circle-mars {
+    margin-left: 1.6rem;
+  }
+  .c-circle-roadster {
+    margin-left: 2.2rem;
   }
 }
 
