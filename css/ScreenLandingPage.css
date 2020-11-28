@@ -65,6 +65,11 @@ h1 {
   font-size: var(--global-font-size-big);
 }
 
+a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
 ::placeholder {
   color: var(--global-font-color);
 }
@@ -186,14 +191,23 @@ h1 {
   -webkit-appearance: none;
   -moz-appearance: none;
 
+  /* border-radius: var(--global-borderRadius);
+  border-width: var(--global-borderWidth);
+  
+  width: 50;
+  background-color: gray;
+  color: var(--global-fontcolor);
+  border: 3px solid #6483ff; */
+
   appearance: none;
   width: 50;
   margin-left: 0.25rem;
+  font-weight: bold;
 
-  border: 1px solid var(--input-borderColor, var(--global-input-borderColor));
+  border: 2px solid #6483ff;
+  background-color: rgba(0, 0, 0, 0.726);
   border-radius: var(--global-borderRadius);
   border-width: var(--global-borderWidth);
-  background-color: #6483ff;
 
   color: var(--global-fontcolor);
   font-family: inherit;
@@ -202,6 +216,11 @@ h1 {
   line-height: calc(var(--global-baseline) * 3);
   padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth)) var(--global-whitespace-md);
   outline: none;
+
+  text-decoration: none !important;
+
+  cursor: pointer;
+  transition: all 0.5s ease-out;
 }
 
 button:hover {
@@ -210,4 +229,64 @@ button:hover {
 
 button:active {
   background-color: var(--global-pressed-color);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  border-radius: 50%;
+  margin: 70px auto;
+  padding: 20px;
+  background: var(--color-white);
+  border-radius: 5px;
+  width: 25%;
+  position: relative;
+  transition: all 1s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: var(--color-dark);
+  align-items: center;
+  align-content: center;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: black;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .box {
+    width: 70%;
+  }
+  .popup {
+    width: 70%;
+  }
 }
