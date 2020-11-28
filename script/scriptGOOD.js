@@ -87,10 +87,10 @@ const drawPlanet = function(planet, clr, X, angle, cox, coy, le, MaA, MiA){
     
     const zerocox = cox
     const zerocoy = coy
-    console.log("Planet = " + planet)
-    console.log("------------------------")
+    // console.log("Planet = " + planet)
+    // console.log("------------------------")
     
-    console.log("cox = " + cox)
+    // console.log("cox = " + cox)
  
     //angle = angle + 45
 
@@ -132,16 +132,16 @@ const drawPlanet = function(planet, clr, X, angle, cox, coy, le, MaA, MiA){
     // http://www.ambrsoft.com/TrigoCalc/Circles2/Ellipse/EllipseLine.htm
     
     angle = angle * (-1)
-    console.log("angle = " + angle)
+    // console.log("angle = " + angle)
     angleRadians = angle * Math.PI / 180
-    console.log("AngleRadians = " + angleRadians)
+    // console.log("AngleRadians = " + angleRadians)
     tangent = Math.tan(angleRadians)
-    console.log("Tangent = " + tangent)
+    // console.log("Tangent = " + tangent)
     SeMaA = MaA/2
     SeMiA = MiA/2
-    console.log("a = semimajor = " + SeMaA)
-    console.log("b = semiminor = " + SeMiA)
-    console.log("Middle = (" + X + ",0)")
+    // console.log("a = semimajor = " + SeMaA)
+    // console.log("b = semiminor = " + SeMiA)
+    // console.log("Middle = (" + X + ",0)")
 
     SeMiASqr = SeMiA*SeMiA
     SeMaASqr = SeMaA*SeMaA
@@ -151,13 +151,13 @@ const drawPlanet = function(planet, clr, X, angle, cox, coy, le, MaA, MiA){
     xvalue = (SeMiASqr * h) + (SeMiA * SeMaA) * Math.sqrt(SqrtPart)
     xvalue = xvalue / (SeMiASqr + (SeMaASqr * TangentSqr))
     yvalue = tangent * xvalue
-    console.log("xvalue = " + xvalue)
-    console.log("yvalue = " + yvalue)
+    // console.log("xvalue = " + xvalue)
+    // console.log("yvalue = " + yvalue)
 
     xvalue = xvalue + 300
     yvalue = 300 - yvalue 
-    console.log("xvalue = " + xvalue)
-    console.log("yvalue = " + yvalue)
+    // console.log("xvalue = " + xvalue)
+    // console.log("yvalue = " + yvalue)
 
     ctx.beginPath();
     //ctx.setLineDash([2, 2]);
@@ -215,7 +215,7 @@ var Earth = function(){
     const EarthMinorAxisDivided = EarthMinorAxisKM / DivisionFactor
 
     drawPlanetOrbit("Earth","#6483ff", EarthCentralPointXDivided, EarthMajorAxisDivided, EarthMinorAxisDivided, cox, coy)
-    console.log("xx " + EarthMajorAxisDivided)
+    //console.log("xx " + EarthMajorAxisDivided)
     drawPlanet("Earth", "#6483ff", EarthCentralPointXDivided, 61, cox, coy, le, EarthMajorAxisDivided, EarthMinorAxisDivided)
 }
 
@@ -261,7 +261,7 @@ const Roadster = function(apoapsis, periapsis, eccentricity){
 }
 
 const WelcomeMessage = function(){
-    console.log("Project: Where is Roadster")
+    console.log("\nProject: Where is Roadster")
     console.log("Author: Mathias De Herdt")
     console.log("Class: 2MCT3")
     console.log("Module: Interaction Design")
