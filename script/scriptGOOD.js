@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("DOMContentLoaded")
     WelcomeMessage()
     drawXYaxes()
-    // getRoadsterData()
+    getRoadsterData()
     Earth()
     Mars()
 });
