@@ -288,5 +288,6 @@ button:active {
   }
   .popup {
     width: 70%;
+    font-size: 13px;
   }
 }

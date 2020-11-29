@@ -290,7 +290,7 @@ h2 {
   }
   ul {
     list-style: none;
-    width: 10rem !important;
+    width: 5.8rem !important;
     margin: 1rem;
 
     padding-inline-start: unset !important;
@@ -305,6 +305,7 @@ h2 {
     opacity: 0;
     line-height: 0.2rem !important;
     background-color: rgba(0, 0, 0, 0.7);
+    width: 10rem !important;
   }
   .c-label {
     font-size: 16px !important;
