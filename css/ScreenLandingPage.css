@@ -1,3 +1,7 @@
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
 :root {
   --color-light: #f9f9f9;
   --color-dark: #171717;
@@ -37,6 +41,10 @@
   --global-pressed-color: #3053e0;
 }
 
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
 html {
   color: var(--global-fontcolor); /* font color */
   /* background-color: black; */
@@ -60,6 +68,10 @@ body {
   background-size: cover;
 }
 
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
 h1 {
   font-weight: bold;
   font-size: var(--global-font-size-big);
@@ -70,9 +82,21 @@ a {
   color: var(--color-white);
 }
 
+button:hover {
+  background-color: var(--global-hover-color);
+}
+
+button:active {
+  background-color: var(--global-pressed-color);
+}
+
 ::placeholder {
   color: var(--global-font-color);
 }
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
 
 .c-app {
   display: grid;
@@ -120,59 +144,6 @@ a {
 .c-tekst__lower {
   grid-row-start: 3;
   grid-column-start: 3;
-}
-
-@media only screen and (max-width: 767px) {
-  body {
-    background-image: url(../img/SpaceRoadsterBackgroundV2Mobile.png);
-  }
-  .c-app {
-    grid-template-columns: 100px;
-    grid-template-rows: 500px;
-  }
-
-  h1 {
-    padding-top: 90px;
-    padding-left: 80px;
-    line-height: 1;
-  }
-
-  .c-img {
-    padding-top: 15px;
-    padding-left: 45px;
-    grid-row-start: 1;
-    grid-column-start: 1;
-  }
-
-  .c-tekst {
-    grid-row-start: 2;
-    grid-column-start: 1;
-    line-height: 1;
-  }
-
-  .c-tekst__main {
-    margin-left: 0.5rem !important;
-    margin-right: 0.5rem !important;
-  }
-
-  .c-tekst__lower {
-    grid-row-start: 2;
-    grid-column-start: 1;
-  }
-  .c-input {
-    width: 10rem !important;
-  }
-  /* .c-input__button {
-    margin-left: 20rem !important;
-  } */
-
-  .box {
-    width: 70%;
-  }
-  .popup {
-    width: 70%;
-    font-size: 13px;
-  }
 }
 
 .c-input {
@@ -231,14 +202,8 @@ a {
   transition: all 0.5s ease-out;
 }
 
-button:hover {
-  background-color: var(--global-hover-color);
-}
 
-button:active {
-  background-color: var(--global-pressed-color);
-}
-
+/* Popup message*/
 .overlay {
   position: fixed;
   top: 0;
@@ -288,6 +253,63 @@ button:active {
 .popup .content {
   max-height: 30%;
   overflow: auto;
+}
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+  body {
+    background-image: url(../img/SpaceRoadsterBackgroundV2Mobile.png);
+  }
+  .c-app {
+    grid-template-columns: 100px;
+    grid-template-rows: 500px;
+  }
+
+  h1 {
+    padding-top: 90px;
+    padding-left: 80px;
+    line-height: 1;
+  }
+
+  .c-img {
+    padding-top: 15px;
+    padding-left: 45px;
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+
+  .c-tekst {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    line-height: 1;
+  }
+
+  .c-tekst__main {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+  }
+
+  .c-tekst__lower {
+    grid-row-start: 2;
+    grid-column-start: 1;
+  }
+  .c-input {
+    width: 10rem !important;
+  }
+  /* .c-input__button {
+    margin-left: 20rem !important;
+  } */
+
+  .box {
+    width: 70%;
+  }
+  .popup {
+    width: 70%;
+    font-size: 13px;
+  }
 }
 
 @media screen and (max-width: 700px) {

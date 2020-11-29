@@ -1,10 +1,17 @@
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
 :root {
+  /* Colors */
   --color-light: #f9f9f9;
   --color-dark: #171717;
   --color-white: #fff;
   --color-light-blue: #6483ff;
   --color-mars-red: red;
   --color-roadster-purple: violet;
+  --global-hover-color: #6583fac4;
+  --global-pressed-color: #3053e0;
 
   --global-backgroundcolor: var(--color-dark);
   --global-fontcolor: var(--color-light);
@@ -14,7 +21,7 @@
   --global-font-color: var(--color-white);
   --global-hover-color: var(--color-light-blue);
 
-  /* borders */
+  /* Borders */
   --global-borderRadius: 30px;
   --global-borderWidth: 2px;
 
@@ -29,23 +36,25 @@
   --global-whitespace-xl: calc(var(--global-whitespace) * 2); /*  = 48px */
   --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /*  = 72px */
 
-  /* forms */
+
+  /* Forms */
   --global-input-borderColor: var(--global-border-color);
 
+  /* Fontsizes */
   --global-font-size-regular: 24px;
   --global-font-size-big: 36px;
 
-  --global-hover-color: #6583fac4;
-  --global-pressed-color: #3053e0;
-
+  /* Measurements*/
   --global-padding-top: 30px;
-
   --global-canvas-width-hight: 600px;
 }
 
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
 html {
-  color: var(--global-fontcolor); /* font color */
-  /* background-color: black; */
+  color: var(--global-fontcolor);
 
   font-size: var(--global-font-size-regular);
   font-family: arial, Helvetica, sans-serif;
@@ -68,8 +77,11 @@ body {
   padding: 0;
 }
 
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
 h1 {
-  /* padding-top: var(--global-padding-top); */
   font-weight: bold;
   font-size: var(--global-font-size-big);
   padding-left: 1rem;
@@ -79,7 +91,6 @@ h1 {
 }
 
 h2 {
-  /* padding-top: var(--global-padding-top); */
   display: flex;
   align-self: center;
   justify-content: center;
@@ -89,6 +100,58 @@ h2 {
   grid-row-start: 1;
 }
 
+label {
+  background-color: transparent;
+  display: block;
+  align-items: flex-end;
+  padding: 0.2rem;
+  color: white;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  margin: 1rem;
+  padding: 0 !important;
+  width: 13rem;
+  margin: 1.25rem;
+}
+
+ul li {
+  font-size: 24px;
+  display: block;
+  height: 20px;
+  padding: 10px;
+  padding-left: 0.2rem;
+
+  border-top: 0.125rem;
+  transition: all 0.5s;
+  opacity: 0;
+  line-height: 1;
+}
+
+label:before {
+  height: 2px;
+  width: 20px;
+  background: white;
+  display: inline-block;
+  content: '';
+  box-shadow: 0px -5px 0px 0px white, 0px -10px 0px 0px white;
+  margin-right: 0px;
+  transition: all 0.5s;
+  position: relative;
+  opacity: 1;
+}
+
+input[type='checkbox'] {
+  visibility: hidden;
+  position: absolute;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
 .c-app {
   display: flex;
   display: grid;
@@ -97,6 +160,7 @@ h2 {
   grid-template-rows: 5rem 25rem 9rem;
 }
 
+/* Solar System with SVG (sun)*/
 .c-solarsystem {
   grid-column-start: 2;
   grid-row-start: 2;
@@ -118,6 +182,7 @@ h2 {
   height: 3.125rem;
 }
 
+/* Text */
 .c-tekst {
   grid-column-start: 2;
   grid-row-start: 3;
@@ -132,10 +197,6 @@ h2 {
   justify-content: space-between;
   padding-top: 100px;
 }
-
-/* .c-tekst__lower:hover {
-  color: hotpink;
-} */
 
 .c-tekst__earth {
   height: 0.1rem;
@@ -161,6 +222,7 @@ h2 {
   padding: 0;
 }
 
+/* Small circle above text */
 .c-circle-earth {
   border-radius: 50%;
   width: 0.625rem;
@@ -185,6 +247,7 @@ h2 {
   margin-left: 4rem;
 }
 
+/* Canvas for Solar System */
 .c-canvas {
   width: 100%;
   max-width: var(--global-canvas-width-hight);
@@ -194,6 +257,34 @@ h2 {
   /* padding-bottom: 100%; */
 }
 
+/* Hamburger */
+.c-hamburger {
+  padding-top: 0rem;
+  grid-row-start: 1;
+  grid-column-start: 3;
+  max-width: 5rem;
+}
+
+.c-label {
+  font-size: 28px;
+  font-weight: bold;
+
+  color: var(--color-white);
+}
+
+#collapse:checked ~ li {
+  margin-top: 0;
+  opacity: 1;
+  /* background-color: #232323; */
+}
+#collapse:checked + label:before {
+  position: relative;
+}
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
 @media only screen and (max-width: 767px) {
   .c-app {
     display: grid;
@@ -201,7 +292,6 @@ h2 {
     grid-template-columns: 16rem !important;
     grid-template-rows: 0.5rem 2rem 2rem 20rem 2rem;
   }
-
   .c-canvas {
     width: 100%;
     max-width: calc(var(--global-canvas-width-hight) / 1.5);
@@ -212,7 +302,6 @@ h2 {
 
     /* padding-bottom: 100%; */
   }
-
   .c-solarsystem {
     grid-column-start: 1;
     grid-row-start: 4;
@@ -223,7 +312,6 @@ h2 {
     display: flex;
     position: relative;
   }
-
   .c-solarsystem__sun {
     display: flex;
     justify-content: center;
@@ -233,7 +321,6 @@ h2 {
     width: 1.5625rem;
     height: 1.5625rem;
   }
-
   h1 {
     padding-left: 0.2rem;
     padding-top: 0rem;
@@ -251,7 +338,6 @@ h2 {
     grid-row-start: 3;
     grid-column-start: 1;
   }
-
   .c-tekst {
     font-size: 14px;
     padding-left: 0.5rem !important;
@@ -310,7 +396,6 @@ h2 {
   .c-label {
     font-size: 16px !important;
   }
-
   label:before {
     height: 2px;
     width: 10px;
@@ -331,7 +416,6 @@ h2 {
     color: white;
     cursor: pointer;
   }
-
   .c-circle-earth {
     margin-left: 1.7rem;
   }
@@ -341,73 +425,4 @@ h2 {
   .c-circle-roadster {
     margin-left: 2.2rem;
   }
-}
-
-/* hamburger */
-
-ul {
-  list-style: none;
-  margin: 1rem;
-  padding: 0 !important;
-  width: 13rem;
-  margin: 1.25rem;
-}
-ul li {
-  font-size: 24px;
-  display: block;
-  height: 20px;
-  padding: 10px;
-  padding-left: 0.2rem;
-
-  border-top: 0.125rem;
-  transition: all 0.5s;
-  opacity: 0;
-  line-height: 1;
-}
-
-label:before {
-  height: 2px;
-  width: 20px;
-  background: white;
-  display: inline-block;
-  content: '';
-  box-shadow: 0px -5px 0px 0px white, 0px -10px 0px 0px white;
-  margin-right: 0px;
-  transition: all 0.5s;
-  position: relative;
-  opacity: 1;
-}
-label {
-  background-color: transparent;
-  display: block;
-  align-items: flex-end;
-  padding: 0.2rem;
-  color: white;
-  cursor: pointer;
-}
-input[type='checkbox'] {
-  visibility: hidden;
-  position: absolute;
-}
-#collapse:checked ~ li {
-  margin-top: 0;
-  opacity: 1;
-  /* background-color: #232323; */
-}
-#collapse:checked + label:before {
-  position: relative;
-}
-
-.c-hamburger {
-  padding-top: 0rem;
-  grid-row-start: 1;
-  grid-column-start: 3;
-  max-width: 5rem;
-}
-
-.c-label {
-  font-size: 28px;
-  font-weight: bold;
-
-  color: var(--color-white);
 }

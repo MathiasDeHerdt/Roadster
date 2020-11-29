@@ -1,3 +1,4 @@
+// Variables
 API_URL = "https://api.spacexdata.com/v3/roadster"
 
 const total = 300
@@ -6,12 +7,15 @@ const cox = total;
 const coy = total;
 const le = total; 
 
+// =========================
+// Function - data from API
+// =========================
 async function getRoadsterData(){
-    // api ophalen en inlezen
+    // Get api and read data
     const response = await fetch(API_URL);
     const data = await response.json();
     
-    // elementen uit api halen
+    // Get elements from api
     const name = data.name;
     const date = data.launch_date_utc;
     const norad = data.norad_id;
@@ -27,17 +31,10 @@ async function getRoadsterData(){
     const Edistance = data.earth_distance_km;
     const Mdistance = data.mars_distance_km;
 
-    // Datum yyyy-mm-dd converteren naar dd-mm-yyyy
+    // Date yyyy-mm-dd converteren to dd-mm-yyyy
     const dateSplit = date.split('T')[0]
     const dateOld = dateSplit.split('-')
     const newDate = [dateOld[2],dateOld[1],dateOld[0]].join("-");
-
-    // gegevens klaarzetten om door te sturen naar html
-    // const formattedSpeed = `Speed: ${Math.round((speed*100)/100)} km/u`
-    // const formattedDate = `Launch date: ${newDate}`
-    // const formattedDays = `Days in space: ${Math.floor(days)} days`
-    // const formattedEarthDistance = `Distance from Earth: ${Math.floor(Edistance)} km`
-    // const formattedMarsDistance = `Distance from Mars: ${Math.floor(Mdistance)} km`
 
     const formattedSpeed = `${Math.round((speed*100)/100)} km/u`
     const formattedDate = `${newDate}`
@@ -45,17 +42,20 @@ async function getRoadsterData(){
     const formattedEarthDistance = `${Math.floor(Edistance)} km`
     const formattedMarsDistance = `${Math.floor(Mdistance)} km`
 
-    // gegevens naar html doorsturen
+    // Send data to html
     document.getElementById('Speed_Roadster').innerHTML = formattedSpeed;
     document.getElementById('LaunchDate_Roadster').innerHTML = formattedDate
     document.getElementById('Days_Roadster').innerHTML = formattedDays
     document.getElementById('DistanceEarth').innerHTML = formattedEarthDistance
     document.getElementById('DistanceMars').innerHTML = formattedMarsDistance
 
-    // roadster zijn baan maken met gegevens uit api
+    // Function with data from api that draws roadsters orbit
     Roadster(apoapsis, periapsis, eccentricity)
 }
 
+// =========================
+// Function - draw x and y axes
+// =========================
 const drawXYaxes = function(){
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
@@ -80,7 +80,9 @@ const drawXYaxes = function(){
     ctx.stroke();
 }
 
-
+// =========================
+// Function - position of the planet in the orbit
+// =========================
 const drawPlanet = function(planet, clr, X, angle, cox, coy, le, MaA, MiA){
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
@@ -170,6 +172,9 @@ const drawPlanet = function(planet, clr, X, angle, cox, coy, le, MaA, MiA){
     //ctx.stroke();
 }
 
+// =========================
+// Function - draw the orbit of the planet (and roadster)
+// =========================
 const drawPlanetOrbit = function(Planet, Clr, X, MaA, MiA, cox, coy){
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
@@ -196,6 +201,9 @@ const drawPlanetOrbit = function(Planet, Clr, X, MaA, MiA, cox, coy){
     ctx.stroke();
 }
 
+// =========================
+// Function - Earth calculations
+// =========================
 var Earth = function(){
     const EarthPeriApsisKM = 147098291
     const EarthApoApsisKM = 152098233
@@ -219,6 +227,9 @@ var Earth = function(){
     drawPlanet("Earth", "#6483ff", EarthCentralPointXDivided, 61, cox, coy, le, EarthMajorAxisDivided, EarthMinorAxisDivided)
 }
 
+// =========================
+// Function - Mars calculations 
+// =========================
 var Mars = function(){
     const MarsPeriApsisKM = 206655215
     const MarsApoApsisKM = 249232432
@@ -241,6 +252,9 @@ var Mars = function(){
     drawPlanet("Mars", "Red", MarsCentralPointXDivided, 44, cox, coy, le, MarsMajorAxisDivided, MarsMinorAxisDivided)
 }
 
+// =========================
+// Function - Roadster calculations with data from api
+// =========================
 const Roadster = function(apoapsis, periapsis, eccentricity){
     const DivisionFactor = 1000000
     const ApoapsisKM = (apoapsis * 149597871);
@@ -260,6 +274,9 @@ const Roadster = function(apoapsis, periapsis, eccentricity){
     drawPlanet("Roadster", "violet", CentralPointXDivided, 316-270, cox, coy, le, MajorAxisDivided, MinorAxisDivided)
 }
 
+// =========================
+// Function - Welcome message 
+// =========================
 const WelcomeMessage = function(){
     console.log("\nProject: Where is Roadster")
     console.log("Author: Mathias De Herdt")
@@ -269,12 +286,11 @@ const WelcomeMessage = function(){
     console.log("School: Howest Kortrijk")
 }
 
-
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOMContentLoaded")
     WelcomeMessage()
     drawXYaxes()
-    getRoadsterData()
+    // getRoadsterData()
     Earth()
     Mars()
 });
