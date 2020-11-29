@@ -46,8 +46,7 @@
 \*------------------------------------*/
 
 html {
-  color: var(--global-fontcolor); /* font color */
-  /* background-color: black; */
+  color: var(--global-fontcolor);
 
   font-size: var(--global-font-size-regular);
   font-family: arial, Helvetica, sans-serif;
@@ -60,8 +59,8 @@ html {
 }
 
 body {
-  /* background-image: url(/img/SRBackgroud.png); */
   background-image: url(../img/SRBackgroud.png);
+
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -101,22 +100,10 @@ button:active {
 .c-app {
   display: grid;
 
-  grid-template-columns: 590px 350px 475px;
-  grid-template-rows: 110px 450px 100px;
-  /*
-  
-  grid-template-columns: 352px 312px 352px 352px;
-  grid-template-rows: 234px 234px 100px 234px;
-  */
+  grid-template-columns: 30rem 21.875rem 29.6875rem;
+  grid-template-rows: 6rem 28.125rem 6.25rem;
 }
-
 .c-img {
-  /*
-  display: inline-block;
-  align-items: center;
-  vertical-align: middle;
-  */
-
   grid-row-start: 2;
   grid-row-end: 2;
 
@@ -180,7 +167,7 @@ button:active {
 
   appearance: none;
   width: 50;
-  margin-left: 0.25rem;
+  margin-left: 0.25rem !important;
   font-weight: bold;
 
   border: 2px solid #6483ff;
@@ -201,7 +188,6 @@ button:active {
   cursor: pointer;
   transition: all 0.5s ease-out;
 }
-
 
 /* Popup message*/
 .overlay {
@@ -264,21 +250,35 @@ button:active {
     background-image: url(../img/SpaceRoadsterBackgroundV2Mobile.png);
   }
   .c-app {
-    grid-template-columns: 100px;
-    grid-template-rows: 500px;
+    grid-template-columns: 6.25rem;
+    grid-template-rows: 31.25rem;
+
+    /* grid-template-columns: 100px;
+    grid-template-rows: 500px; */
   }
 
   h1 {
-    padding-top: 90px;
-    padding-left: 80px;
+    font-size: 30px;
+
+    padding-top: 3rem;
+    margin-left: 2.6rem;
+
     line-height: 1;
   }
 
+  .c-input {
+    margin-left: 0.24rem !important;
+  }
+
   .c-img {
-    padding-top: 15px;
-    padding-left: 45px;
     grid-row-start: 1;
     grid-column-start: 1;
+
+    margin-left: 2.5rem;
+    margin-top: 2rem;
+
+    /* padding-top: 15px;
+    padding-left: 45px; */
   }
 
   .c-tekst {
@@ -319,5 +319,20 @@ button:active {
   .popup {
     width: 70%;
     font-size: 13px;
+  }
+}
+
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+  h1 {
+    padding-top: 3rem;
+    margin-left: 3.6rem;
+  }
+
+  .c-img {
+    grid-row-start: 1;
+    grid-column-start: 1;
+
+    margin-left: 3.5rem;
+    margin-top: 2rem;
   }
 }

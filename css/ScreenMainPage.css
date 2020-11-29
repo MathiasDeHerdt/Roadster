@@ -426,3 +426,49 @@ input[type='checkbox'] {
     margin-left: 2.2rem;
   }
 }
+
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3){
+
+  .c-app {
+    display: grid;
+
+    grid-template-columns: 18rem !important;
+    grid-template-rows: 0.5rem 2rem 2rem 19rem 5rem !important;
+  }
+
+  h2 {
+    font-size: 18px;
+
+    padding-top: 3rem;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    grid-row-start: 3;
+    grid-column-start: 1;
+  }
+
+  .c-tekst {
+    font-size: 14px;
+    padding-left: 1rem !important;
+    padding-right: 1.5rem !important;
+    max-width: 20rem !important;
+    grid-column-start: 1;
+    grid-row-start: 5;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .c-tekst__lower {
+    font-size: 14px;
+    padding-left: 1rem !important;
+    padding-right: 1.5rem !important;
+    padding-bottom: 2rem !important;
+    max-width: 20rem !important;
+    grid-column-start: 1;
+    grid-row-start: 5;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 100px;
+  }
+
+}
