@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/ScreenMainPage.css">
+    <!-- <link rel="stylesheet" href="css/MAINBACKUP.css"> -->
     
     <!-- <script src="script/script.js"></script> -->
     <script src="script/scriptGOOD.js"></script>
@@ -39,8 +40,30 @@
                 <li id="DistanceMars" style="color: #6483ff;">Distance M</li>
             </ul>
         </div> -->
+        <div class="c-info">
+            <ul>
+                <input type="checkbox" id="collapse"/> 
+                <label class="c-label" for="collapse">
+                    <svg class="c-svg" viewBox="0 0 20 20">
+                        <path id="ic_info_outline_24px" class="c-box" d="M11,17h2V11H11ZM12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.011,8.011,0,0,1,12,20ZM11,9h2V7H11Z" transform="translate(-2 -2)"/>
+                    </svg>
+                </label>
 
-        <div class="c-solarsystem" style="z-index: 1;"> 
+                <li style="font-weight: bold;">Speed:</li>
+                <li id="Speed_Roadster" style="color: #6483ff;">Speed </li>
+                <li style="font-weight: bold;">Launch Date:</li>
+                <li id="LaunchDate_Roadster" style="color: #6483ff;">Date </li>
+                <li style="font-weight: bold;">Days in space:</li>
+                <li id="Days_Roadster" style="color: #6483ff;">Days</li>
+                <li style="font-weight: bold;">Distance from Earth: </li>
+                <li id="DistanceEarth" style="color: #6483ff;">Distance E</li>
+                <li style="font-weight: bold;">Distance from Mars: </li>
+                <li id="DistanceMars" style="color: #6483ff;">Distance M</li>
+            </ul>
+        </div > 
+
+
+        <div class="c-solarsystem"> 
 
             <canvas class="c-canvas" id="canvas" width="600" height="600"></canvas>
             

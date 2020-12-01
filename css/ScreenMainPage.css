@@ -8,8 +8,8 @@
   --color-dark: #171717;
   --color-white: #fff;
   --color-light-blue: #6483ff;
-  --color-mars-red: red;
-  --color-roadster-purple: violet;
+  --color-mars-red: #ff0000;
+  --color-roadster-purple: #ee82ee;
   --global-hover-color: #6583fac4;
   --global-pressed-color: #3053e0;
 
@@ -41,7 +41,7 @@
 
   /* Fontsizes */
   --global-font-size-regular: 24px;
-  --global-font-size-big: 36px;
+  --global-font-size-big: 30px;
   --global-font-size-bigger: 42px;
 
   /* Measurements*/
@@ -93,6 +93,69 @@ h1 {
   font-size: var(--global-font-size-big);
 }
 
+label {
+  background-color: transparent;
+  display: flex;
+  padding: 0.2rem;
+  cursor: pointer;
+  max-width: 2rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  background-color: honeydew;
+  margin-right: 0.5rem !important;
+
+  display: inline;
+  align-items: center;
+  list-style-type: none;
+  margin-block-start: 0rem;
+  margin-block-end: 0rem;
+  margin-inline-start: 0rem;
+  margin-inline-end: 0rem;
+  padding-inline-start: 0rem;
+}
+
+ul li {
+  font-size: 24px;
+  display: flex;
+  height: 1rem;
+  padding: 0.5rem;
+  padding-left: 0.2rem;
+
+  border-top: 0.125rem;
+  transition: all 0.5s;
+  opacity: 0;
+  line-height: 1;
+}
+
+li {
+  width: 9.9rem;
+  margin-left: 0.5rem;
+  background-color: #000000bd;
+}
+
+label:before {
+  transition: all 0.5s;
+  position: relative;
+  opacity: 1;
+}
+
+input[type='checkbox'] {
+  visibility: hidden;
+  position: absolute;
+}
+
+#collapse:checked ~ li {
+  margin-top: 0;
+  opacity: 1;
+  /* background-color: #232323; */
+}
+#collapse:checked + label:before {
+  position: relative;
+}
+
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
@@ -107,7 +170,7 @@ h1 {
   display: grid;
 
   grid-template-columns: 100%;
-  grid-template-rows: 0.5rem 0.5rem 20rem 2rem 2rem;
+  grid-template-rows: 2.5rem 1rem 20rem 2rem 2rem;
 }
 
 .c-solarsystem {
@@ -117,6 +180,8 @@ h1 {
 
   grid-column-start: 1;
   grid-row-start: 3;
+
+  z-index: 1;
 }
 
 .c-solarsystem__sun {
@@ -127,6 +192,37 @@ h1 {
 
   width: 1.5625rem;
   height: 1.5625rem;
+
+  z-index: 1;
+}
+.c-info {
+  padding-top: 0rem;
+  grid-row-start: 1;
+  grid-column-start: 1;
+
+  z-index: 2;
+}
+
+.c-label {
+  font-size: 28px;
+  font-weight: bold;
+
+  color: var(--color-white);
+}
+
+.c-svg {
+  display: flex;
+
+  width: 1.3rem;
+  height: 1.3rem;
+
+  fill: var(--color-roadster-purple);
+
+  grid-column-start: 1;
+  grid-row-start: 1;
+
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
 }
 
 .c-tekst {
@@ -220,6 +316,9 @@ h1 {
 
 /* bigger phones*/
 @media (min-width: 400px) {
+  h1 {
+    margin-top: 2rem;
+  }
   .c-app {
     grid-template-columns: 100%;
     grid-template-rows: 1.5rem 0.5rem 24rem 2rem 2rem;
@@ -242,6 +341,9 @@ h1 {
     grid-template-columns: 100%;
     grid-template-rows: 1.5rem 0.5rem 35rem 2rem 2rem;
   }
+  li {
+    background-color: transparent;
+  }
 }
 
 /* desktop*/
@@ -249,7 +351,7 @@ h1 {
   .c-app {
     display: grid;
 
-    grid-template-columns: 27rem 27rem 27rem;
+    grid-template-columns: 2rem 25rem 27rem 27rem;
     grid-template-rows: 5rem 25rem 4.5rem 4.5rem;
   }
   h1 {
@@ -257,15 +359,26 @@ h1 {
     justify-content: center;
     align-items: center;
 
-    grid-column-start: 2;
+    grid-column-start: 3;
     grid-row-start: 1;
 
     font-weight: bold;
     font-size: var(--global-font-size-bigger);
   }
+  li {
+    background-color: transparent;
+  }
+
+  .c-info {
+    padding-top: 0rem;
+    grid-row-start: 1;
+    grid-column-start: 1;
+
+    z-index: 2;
+  }
 
   .c-solarsystem {
-    grid-column-start: 2;
+    grid-column-start: 3;
     grid-row-start: 2;
 
     justify-items: center;
@@ -291,7 +404,7 @@ h1 {
 
     font-size: var(--global-font-size-regular);
 
-    grid-column-start: 2;
+    grid-column-start: 3;
     grid-row-start: 3;
   }
 
@@ -301,7 +414,7 @@ h1 {
 
     font-size: var(--global-font-size-regular);
 
-    grid-column-start: 2;
+    grid-column-start: 3;
     grid-row-start: 4;
 
     padding-top: 3rem;
