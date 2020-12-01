@@ -102,6 +102,7 @@ button:active {
 
   grid-template-columns: 30rem 21.875rem 29.6875rem;
   grid-template-rows: 6rem 28.125rem 6.25rem;
+
 }
 .c-img {
   grid-row-start: 2;
@@ -326,6 +327,7 @@ button:active {
   h1 {
     padding-top: 3rem;
     margin-left: 3.6rem;
+    display: flex;
   }
 
   .c-img {
