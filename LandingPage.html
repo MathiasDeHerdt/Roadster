@@ -37,13 +37,21 @@
             </div>
 
             <form>
-                <p class="c-tekst__lower js-email-field">
-                    
-                    <input class="c-input js-email-input" type="email"placeholder="Your Email" required style="text-align: center"/>
-                    <!-- <a href="#popup1"><button class="c-input__button">Get notified!</button></a> -->
-                    <button class="c-input__button"><a href="#popup1">Get notified!</a></button>
+                <!-- <p class="c-tekst__lower js-email-field">
+                    <input class="c-input-email js-email-input" type="email"placeholder="Your Email" required style="text-align: center"/>
+                    <button class="c-input-button"><a href="#popup1">Get notified!</a></button>
+                </p> -->
+
+                <p class="c-form-field js-email-field">
+                    <label class="c-label js-email-label" for="username">
+                        <span class="c-label__error-message js-email-error-message"></span>
+                    </label>
+                    <input class="c-input-email js-email-input" type="email" name="username" id="username" placeholder="Your Email" required>
                 </p>
+                <button class="c-input-button js-sign-in-button">Get notified!</button>
             </form>
+
+
         </div>
         <div id="popup1" class="overlay">
             <div class="popup">

@@ -321,7 +321,7 @@ input[type='checkbox'] {
   }
   .c-app {
     grid-template-columns: 100%;
-    grid-template-rows: 1.5rem 0.5rem 24rem 2rem 2rem;
+    grid-template-rows: 1.5rem 0.5rem 24rem 2rem 3rem;
   }
 
   .c-tekst {

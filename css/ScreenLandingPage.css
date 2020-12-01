@@ -39,6 +39,16 @@
 
   --global-hover-color: #6583fac4;
   --global-pressed-color: #3053e0;
+
+  /* email */
+  --global-color-error: #ff3333;
+  --global-color-error-transparent: #ff3333bf;
+  --global-color-error-x-transparent: #ff33334d;
+
+  --global-input-error-borderColor: var(--global-color-error);
+  --global-input-focus-boxShadowSpread: 0 0 0 3px;
+  --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
+  --global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
 }
 
 /*------------------------------------*\
@@ -59,7 +69,7 @@ html {
 }
 
 body {
-  background-image: url(../img/SRBackgroud.png);
+  background-image: url(../img/SpaceRoadsterBackgroundV2Mobile.png);
 
   background-position: center center;
   background-repeat: no-repeat;
@@ -68,12 +78,18 @@ body {
 }
 
 /*------------------------------------*\
-#Elements
+  #Elements
 \*------------------------------------*/
-
 h1 {
-  font-weight: bold;
-  font-size: var(--global-font-size-big);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 30px;
+
+  padding-top: 1.5rem;
+
+  line-height: 1;
 }
 
 a {
@@ -94,24 +110,27 @@ button:active {
 }
 
 /*------------------------------------*\
-#COMPONENTS
+  #COMPONENTS
 \*------------------------------------*/
-
 .c-app {
   display: grid;
 
-  grid-template-columns: 30rem 21.875rem 29.6875rem;
-  grid-template-rows: 6rem 28.125rem 6.25rem;
-
+  grid-template-columns: auto;
+  grid-template-rows: auto;
 }
-.c-img {
-  grid-row-start: 2;
-  grid-row-end: 2;
+.c-input {
+  margin-left: 0.24rem;
+}
 
-  grid-column-start: 2;
-  grid-column-end: 3;
-  width: 288px;
-  height: 583px;
+.c-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-row-start: 1;
+  grid-column-start: 1;
+
+  margin-top: 2rem;
 }
 
 .c-tekst {
@@ -119,26 +138,42 @@ button:active {
   vertical-align: text-bottom;
 
   grid-row-start: 2;
-  grid-row-end: 4;
-
-  grid-column-start: 3;
-  grid-column-end: 3;
-
-  line-height: 1.5;
+  grid-column-start: 1;
 
   font-size: 20px;
+
+  line-height: 1;
+}
+
+.c-tekst__main {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .c-tekst__lower {
-  grid-row-start: 3;
-  grid-column-start: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-row-start: 2;
+  grid-column-start: 1;
 }
 
-.c-input {
+.box {
+  width: 70%;
+}
+.popup {
+  width: 70%;
+  font-size: 13px;
+}
+
+.c-input-email {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 50;
+  width: 45%;
+
+  margin-left: 0.5rem;
 
   border: 1px solid var(--input-borderColor, var(--global-input-borderColor));
   border-radius: var(--global-borderRadius);
@@ -154,22 +189,20 @@ button:active {
   outline: none;
 }
 
-.c-input__button {
+.c-input-button {
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  /* border-radius: var(--global-borderRadius);
-  border-width: var(--global-borderWidth);
-  
-  width: 50;
-  background-color: gray;
-  color: var(--global-fontcolor);
-  border: 3px solid #6483ff; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   appearance: none;
-  width: 50;
-  margin-left: 0.25rem !important;
+  width: auto;
   font-weight: bold;
+
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 
   border: 2px solid #6483ff;
   background-color: rgba(0, 0, 0, 0.726);
@@ -184,7 +217,7 @@ button:active {
   padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth)) var(--global-whitespace-md);
   outline: none;
 
-  text-decoration: none !important;
+  text-decoration: none;
 
   cursor: pointer;
   transition: all 0.5s ease-out;
@@ -209,11 +242,11 @@ button:active {
 
 .popup {
   border-radius: 50%;
-  margin: 70px auto;
-  padding: 20px;
+  margin: 3rem auto;
+  padding: 1rem;
   background: var(--color-white);
-  border-radius: 5px;
-  width: 25%;
+  border-radius: 0.2rem;
+  width: 50%;
   position: relative;
   transition: all 1s ease-in-out;
 }
@@ -226,8 +259,8 @@ button:active {
 }
 .popup .close {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  top: 1rem;
+  right: 1.25rem;
   transition: all 200ms;
   font-size: 30px;
   font-weight: bold;
@@ -242,99 +275,162 @@ button:active {
   overflow: auto;
 }
 
+/* EMAIL */
+.c-form-field {
+  position: relative;
+}
+.c-label {
+  margin-bottom: 0;
+  font-size: var(--global-font-size-regular);
+  padding-bottom: var(--global-whitespace-sm);
+  line-height: calc(var(--global-baseline) * 2);
+  color: var(--label-color, var(--global-label-color));
+}
+
+.c-label__error-message {
+  display: flex;
+  justify-content: left;
+
+  grid-row-start: 2;
+  grid-column-start: 1;
+
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  font-weight: bold;
+
+  visibility: visible;
+  /* display: none; */
+}
+
+.has-error {
+  --label-color: var(--global-color-error);
+  --input-borderColor: var(--global-input-error-borderColor);
+  --input-hover-borderColor: var(--global-input-error-borderColor);
+  --input-focus-borderColor: var(--global-input-error-borderColor);
+  --input-focus-boxShadowColor: var(--global-input-error-boxShadowColor);
+}
 /*------------------------------------*\
-#MEDIA
+  #MEDIA
 \*------------------------------------*/
 
-@media only screen and (max-width: 767px) {
-  body {
-    background-image: url(../img/SpaceRoadsterBackgroundV2Mobile.png);
-  }
-  .c-app {
-    grid-template-columns: 6.25rem;
-    grid-template-rows: 31.25rem;
-
-    /* grid-template-columns: 100px;
-    grid-template-rows: 500px; */
-  }
-
+/* bigger phones*/
+@media (min-width: 400px) {
   h1 {
-    font-size: 30px;
+    padding-top: 0.8rem;
+  }
+}
 
-    padding-top: 3rem;
-    margin-left: 2.6rem;
-
-    line-height: 1;
+/* tablet */
+@media (min-width: 768px) {
+  body {
+    background-image: url(../img/SRBackgroud.png);
   }
 
-  .c-input {
-    margin-left: 0.24rem !important;
+  .c-app {
+    grid-template-columns: 32rem 17rem 25rem;
+    grid-template-rows: 6rem 28.125rem 6.25rem;
   }
 
   .c-img {
-    grid-row-start: 1;
-    grid-column-start: 1;
-
-    margin-left: 2.5rem;
-    margin-top: 2rem;
-
-    /* padding-top: 15px;
-    padding-left: 45px; */
-  }
-
-  .c-tekst {
     grid-row-start: 2;
-    grid-column-start: 1;
-    line-height: 1;
-  }
+    grid-row-end: 2;
 
-  .c-tekst__main {
-    margin-left: 0.5rem !important;
-    margin-right: 0.5rem !important;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    width: 288px;
+    height: 583px;
+  }
+  .c-tekst {
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+    grid-row-start: 2;
+    grid-row-end: 4;
+
+    grid-column-start: 3;
+    grid-column-end: 3;
+
+    line-height: 1.5;
+
+    font-size: 20px;
   }
 
   .c-tekst__lower {
-    grid-row-start: 2;
-    grid-column-start: 1;
+    grid-row-start: 3;
+    grid-column-start: 3;
   }
-  .c-input {
-    width: 10rem !important;
-  }
-  /* .c-input__button {
-    margin-left: 20rem !important;
-  } */
 
-  .box {
-    width: 70%;
-  }
   .popup {
-    width: 70%;
-    font-size: 13px;
+    border-radius: 50%;
+    margin: 3rem auto;
+    padding: 1rem;
+    background: var(--color-white);
+    border-radius: 0.2rem;
+    width: 15%;
+    position: relative;
+    transition: all 1s ease-in-out;
+  }
+
+  .c-input-email {
+    margin-left: 0rem;
   }
 }
 
-@media screen and (max-width: 700px) {
-  .box {
-    width: 70%;
+/* desktop*/
+@media (min-width: 1200px) {
+  body {
+    background-image: url(../img/SRBackgroud.png);
   }
-  .popup {
-    width: 70%;
-    font-size: 13px;
-  }
-}
 
-@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
-  h1 {
-    padding-top: 3rem;
-    margin-left: 3.6rem;
-    display: flex;
+  .c-app {
+    grid-template-columns: 32rem 17rem 25rem;
+    grid-template-rows: 6rem 28.125rem 6.25rem;
   }
 
   .c-img {
-    grid-row-start: 1;
-    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
 
-    margin-left: 3.5rem;
-    margin-top: 2rem;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    width: 288px;
+    height: 583px;
+  }
+  .c-tekst {
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+    grid-row-start: 2;
+    grid-row-end: 4;
+
+    grid-column-start: 3;
+    grid-column-end: 3;
+
+    line-height: 1.5;
+
+    font-size: 20px;
+  }
+
+  .c-tekst__lower {
+    grid-row-start: 3;
+    grid-column-start: 3;
+  }
+
+  .popup {
+    border-radius: 50%;
+    margin: 3rem auto;
+    padding: 1rem;
+    background: var(--color-white);
+    border-radius: 0.2rem;
+    width: 15%;
+    position: relative;
+    transition: all 1s ease-in-out;
+  }
+
+  .c-input-email {
+    margin-left: 0rem;
   }
 }
