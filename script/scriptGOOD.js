@@ -43,11 +43,11 @@ async function getRoadsterData(){
     const formattedMarsDistance = `${Math.floor(Mdistance)} km`
 
     // Send data to html
-    document.getElementById('Speed_Roadster').innerHTML = formattedSpeed;
-    document.getElementById('LaunchDate_Roadster').innerHTML = formattedDate
-    document.getElementById('Days_Roadster').innerHTML = formattedDays
-    document.getElementById('DistanceEarth').innerHTML = formattedEarthDistance
-    document.getElementById('DistanceMars').innerHTML = formattedMarsDistance
+    // document.getElementById('Speed_Roadster').innerHTML = formattedSpeed;
+    // document.getElementById('LaunchDate_Roadster').innerHTML = formattedDate
+    // document.getElementById('Days_Roadster').innerHTML = formattedDays
+    // document.getElementById('DistanceEarth').innerHTML = formattedEarthDistance
+    // document.getElementById('DistanceMars').innerHTML = formattedMarsDistance
 
     // Function with data from api that draws roadsters orbit
     Roadster(apoapsis, periapsis, eccentricity)

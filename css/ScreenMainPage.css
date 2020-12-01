@@ -42,6 +42,7 @@
   /* Fontsizes */
   --global-font-size-regular: 24px;
   --global-font-size-big: 36px;
+  --global-font-size-bigger: 42px;
 
   /* Measurements*/
   --global-padding-top: 30px;
@@ -105,7 +106,7 @@ h1 {
 .c-app {
   display: grid;
 
-  grid-template-columns: 15.5rem;
+  grid-template-columns: 100%;
   grid-template-rows: 0.5rem 0.5rem 20rem 2rem 2rem;
 }
 
@@ -140,7 +141,7 @@ h1 {
 
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  max-width: 14.5rem;
+  max-width: 100%;
 }
 
 .c-tekst__lower {
@@ -158,7 +159,7 @@ h1 {
   padding-top: 2.5rem;
   padding-bottom: 2rem;
 
-  max-width: 14.5rem;
+  max-width: 100%;
 }
 .c-tekst__earth {
   height: 0.1rem;
@@ -190,6 +191,7 @@ h1 {
 }
 
 .c-circle__earth {
+  margin-left: 1.5rem;
   border-radius: 50%;
   width: 0.625rem;
   height: 0.625rem;
@@ -197,6 +199,7 @@ h1 {
 }
 
 .c-circle__mars {
+  margin-left: 1.5rem;
   border-radius: 50%;
   width: 0.625rem;
   height: 0.625rem;
@@ -204,6 +207,7 @@ h1 {
 }
 
 .c-circle__roadster {
+  margin-left: 2.2rem;
   border-radius: 50%;
   width: 0.625rem;
   height: 0.625rem;
@@ -217,27 +221,101 @@ h1 {
 /* bigger phones*/
 @media (min-width: 400px) {
   .c-app {
-    background: green;
+    grid-template-columns: 100%;
+    grid-template-rows: 1.5rem 0.5rem 24rem 2rem 2rem;
+  }
 
-    grid-template-columns: 17rem;
-    grid-template-rows: 0.5rem 2rem 2rem 20rem 2rem;
+  .c-tekst {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .c-tekst__lower {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
 /* tablet */
 @media (min-width: 768px) {
   .c-app {
-    background: blue;
+    grid-template-columns: 100%;
+    grid-template-rows: 1.5rem 0.5rem 35rem 2rem 2rem;
   }
 }
 
 /* desktop*/
 @media (min-width: 1200px) {
   .c-app {
-    background-color: hotpink;
     display: grid;
 
-    grid-template-columns: 18rem 45rem 17rem;
-    grid-template-rows: 5rem 25rem 9rem;
+    grid-template-columns: 27rem 27rem 27rem;
+    grid-template-rows: 5rem 25rem 4.5rem 4.5rem;
+  }
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column-start: 2;
+    grid-row-start: 1;
+
+    font-weight: bold;
+    font-size: var(--global-font-size-bigger);
+  }
+
+  .c-solarsystem {
+    grid-column-start: 2;
+    grid-row-start: 2;
+
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+  }
+
+  .c-solarsystem__sun {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+    width: 3.125rem;
+    height: 3.125rem;
+  }
+
+  .c-tekst {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: var(--global-font-size-regular);
+
+    grid-column-start: 2;
+    grid-row-start: 3;
+  }
+
+  .c-tekst__lower {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: var(--global-font-size-regular);
+
+    grid-column-start: 2;
+    grid-row-start: 4;
+
+    padding-top: 3rem;
+  }
+
+  .c-circle__earth {
+    margin-left: 2.8rem;
+  }
+
+  .c-circle__mars {
+    margin-left: 2.5rem;
+  }
+
+  .c-circle__roadster {
+    margin-left: 4rem;
   }
 }
