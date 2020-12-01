@@ -86,8 +86,9 @@ const enableListeners = function() {
 	});
 };
 
-const showNotification = function{
-    console.log("here")
+const showNotification = function() {
+    document.getElementById("notification").click();
+
 }
 /* -------------------------------------------------------------------------- */
 

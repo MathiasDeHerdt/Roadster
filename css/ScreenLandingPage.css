@@ -203,6 +203,7 @@ button:active {
 
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  margin-bottom: 1rem;
 
   border: 2px solid #6483ff;
   background-color: rgba(0, 0, 0, 0.726);
@@ -310,6 +311,10 @@ button:active {
   --input-focus-borderColor: var(--global-input-error-borderColor);
   --input-focus-boxShadowColor: var(--global-input-error-boxShadowColor);
 }
+
+.c-invisible {
+  visibility: hidden;
+}
 /*------------------------------------*\
   #MEDIA
 \*------------------------------------*/
@@ -374,6 +379,10 @@ button:active {
   }
 
   .c-input-email {
+    margin-left: 0rem;
+  }
+
+  .c-input-button {
     margin-left: 0rem;
   }
 }
