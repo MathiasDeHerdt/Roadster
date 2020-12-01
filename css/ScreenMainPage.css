@@ -352,7 +352,7 @@ input[type='checkbox'] {
     display: grid;
 
     grid-template-columns: 2rem 25rem 27rem 27rem;
-    grid-template-rows: 5rem 25rem 4.5rem 4.5rem;
+    grid-template-rows: 4.5rem 25rem 4.5rem 4.5rem;
   }
   h1 {
     display: flex;
