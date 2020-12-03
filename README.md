@@ -19,6 +19,3 @@ E-mail (school): mathias.de.herdt@student.howest.be
 Email (personal): mathias.deherdt@live.com
 
 My personal website: http://mathiasdeherdt.be/portfolio/
-
-
-
