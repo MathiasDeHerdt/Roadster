@@ -140,8 +140,6 @@ button:active {
   grid-row-start: 1;
   grid-column-start: 1;
 
-  
-
   margin-top: var(--global-margin-big);
 }
 
