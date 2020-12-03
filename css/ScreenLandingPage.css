@@ -6,7 +6,14 @@
   --color-light: #f9f9f9;
   --color-dark: #171717;
   --color-white: #fff;
+  --color-grey: #333;
   --color-light-blue: #6483ff;
+  --color-dark-transparant: rgba(0, 0, 0, 0.726);
+  --global-hover-color: #6583fac4;
+  --global-pressed-color: #3053e0;
+  --global-color-error: #ff3333;
+  --global-color-error-transparent: #ff3333bf;
+  --global-color-error-x-transparent: #ff33334d;
 
   --global-backgroundcolor: var(--color-dark);
   --global-fontcolor: var(--color-light);
@@ -17,11 +24,11 @@
   --global-hover-color: var(--color-light-blue);
 
   /* borders */
-  --global-borderRadius: 30px;
-  --global-borderWidth: 2px;
+  --global-borderRadius: 1.875rem;
+  --global-borderWidth: 0.125rem;
 
   /* Baseline settings */
-  --global-baseline: 8px;
+  --global-baseline: 0.5rem;
   --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
 
   --global-whitespace-xs: calc(var(--global-baseline) / 2); /* = 4px */
@@ -34,21 +41,24 @@
   /* forms */
   --global-input-borderColor: var(--global-border-color);
 
-  --global-font-size-regular: 18px;
-  --global-font-size-big: 48px;
+  /* fontsize */
+  --global-font-size-regular: 1rem;
+  --global-font-size-big: 2rem;
 
-  --global-hover-color: #6583fac4;
-  --global-pressed-color: #3053e0;
+  --global-fontsize-web: 1.25rem;
+  --global-fontsize-web-big: 2.25rem;
 
   /* email */
-  --global-color-error: #ff3333;
-  --global-color-error-transparent: #ff3333bf;
-  --global-color-error-x-transparent: #ff33334d;
-
   --global-input-error-borderColor: var(--global-color-error);
   --global-input-focus-boxShadowSpread: 0 0 0 3px;
   --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
   --global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
+
+  --global-margin: 1rem;
+
+  --global-margin-smaller: calc(var(--global-margin) / 4);
+  --global-margin-small: calc(var(--global-margin) / 2);
+  --global-margin-big: calc(var(--global-margin) * 2);
 }
 
 /*------------------------------------*\
@@ -85,7 +95,7 @@ h1 {
   justify-content: center;
   align-items: center;
 
-  font-size: 30px;
+  font-size: var(--global-font-size-big);
 
   padding-top: 1.5rem;
 
@@ -119,7 +129,7 @@ button:active {
   grid-template-rows: auto;
 }
 .c-input {
-  margin-left: 0.24rem;
+  margin-left: var(--global-margin-smaller);
 }
 
 .c-img {
@@ -130,7 +140,9 @@ button:active {
   grid-row-start: 1;
   grid-column-start: 1;
 
-  margin-top: 2rem;
+  
+
+  margin-top: var(--global-margin-big);
 }
 
 .c-tekst {
@@ -140,14 +152,14 @@ button:active {
   grid-row-start: 2;
   grid-column-start: 1;
 
-  font-size: 20px;
+  font-size: var(--global-font-size-regular);
 
   line-height: 1;
 }
 
 .c-tekst__main {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  margin-left: var(--global-margin-small);
+  margin-right: var(--global-margin-small);
 }
 
 .c-tekst__lower {
@@ -164,7 +176,7 @@ button:active {
 }
 .popup {
   width: 70%;
-  font-size: 13px;
+  font-size: var(--global-font-size-regular);
 }
 
 .c-input-email {
@@ -173,7 +185,7 @@ button:active {
   appearance: none;
   width: 45%;
 
-  margin-left: 0.5rem;
+  margin-left: var(--global-margin-small);
 
   border: 1px solid var(--input-borderColor, var(--global-input-borderColor));
   border-radius: var(--global-borderRadius);
@@ -201,12 +213,12 @@ button:active {
   width: auto;
   font-weight: bold;
 
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  margin-bottom: 1rem;
+  margin-left: var(--global-margin-small);
+  margin-right: var(--global-margin-small);
+  margin-bottom: var(--global-margin);
 
-  border: 2px solid #6483ff;
-  background-color: rgba(0, 0, 0, 0.726);
+  border: 2px solid var(--color-light-blue);
+  background-color: var(--color-dark-transparant);
   border-radius: var(--global-borderRadius);
   border-width: var(--global-borderWidth);
 
@@ -231,7 +243,7 @@ button:active {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--color-dark-transparant);
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
@@ -266,10 +278,10 @@ button:active {
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
-  color: #333;
+  color: var(--color-grey);
 }
 .popup .close:hover {
-  color: black;
+  color: var(--color-dark);
 }
 .popup .content {
   max-height: 30%;
@@ -295,13 +307,11 @@ button:active {
   grid-row-start: 2;
   grid-column-start: 1;
 
-  margin-left: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-left: var(--global-margin-small);
+  margin-bottom: var(--global-margin-small);
 
   font-weight: bold;
-
   visibility: visible;
-  /* display: none; */
 }
 
 .has-error {
@@ -316,7 +326,7 @@ button:active {
   visibility: hidden;
 }
 /*------------------------------------*\
-  #MEDIA
+  #MEDIA QUERY
 \*------------------------------------*/
 
 /* bigger phones*/
@@ -329,7 +339,7 @@ button:active {
 /* tablet */
 @media (min-width: 768px) {
   body {
-    background-image: url(../img/SRBackgroud.png);
+    background-image: url(../img/SRBackgroud2.png);
   }
 
   .c-app {
@@ -343,8 +353,6 @@ button:active {
 
     grid-column-start: 2;
     grid-column-end: 3;
-    width: 288px;
-    height: 583px;
   }
   .c-tekst {
     display: block;
@@ -359,7 +367,7 @@ button:active {
 
     line-height: 1.5;
 
-    font-size: 20px;
+    margin-left: var(--global-margin-big);
   }
 
   .c-tekst__lower {
@@ -390,11 +398,14 @@ button:active {
 /* desktop*/
 @media (min-width: 1200px) {
   body {
-    background-image: url(../img/SRBackgroud.png);
+    background-image: url(../img/SRBackgroud2.png);
+  }
+  h1 {
+    font-size: var(--global-fontsize-web-big);
   }
 
   .c-app {
-    grid-template-columns: 32rem 17rem 25rem;
+    grid-template-columns: 32rem 18rem 30rem;
     grid-template-rows: 6rem 28.125rem 6.25rem;
   }
 
@@ -404,8 +415,8 @@ button:active {
 
     grid-column-start: 2;
     grid-column-end: 3;
-    width: 288px;
-    height: 583px;
+    width: 18rem;
+    height: 36.4375rem;
   }
   .c-tekst {
     display: block;
@@ -420,7 +431,7 @@ button:active {
 
     line-height: 1.5;
 
-    font-size: 20px;
+    font-size: var(--global-fontsize-web);
   }
 
   .c-tekst__lower {
