@@ -330,7 +330,7 @@ input[type='checkbox'] {
   }
   .c-app {
     grid-template-columns: 100%;
-    grid-template-rows: 2rem 4rem 30rem 4rem 4rem;
+    grid-template-rows: 2rem 4rem 30rem 2rem 4rem;
   }
 
   .c-tekst {
@@ -350,7 +350,7 @@ input[type='checkbox'] {
 @media (min-width: 768px) {
   .c-app {
     grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 10rem 30rem 4.5rem auto;
+    grid-template-rows: 10rem 30rem 4rem auto;
   }
   h1 {
     display: flex;
@@ -433,7 +433,7 @@ input[type='checkbox'] {
   }
 
   .c-circle__mars {
-    margin-left: 3.25rem;
+    margin-left: 3.5rem;
   }
 
   .c-circle__roadster {
