@@ -403,7 +403,7 @@ button:active {
   }
 
   .c-app {
-    grid-template-columns: 32rem 18rem 30rem;
+    grid-template-columns: 38rem 18rem 30rem;
     grid-template-rows: 6rem 28.125rem 6.25rem;
   }
 
