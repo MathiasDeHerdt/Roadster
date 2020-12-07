@@ -165,6 +165,11 @@ input[type='checkbox'] {
   position: relative;
 }
 
+.c-svg:hover {
+  transition: 0.25s;
+  fill: var(--global-hover-color);
+}
+
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
@@ -222,16 +227,15 @@ input[type='checkbox'] {
 .c-svg {
   display: flex;
 
-  width: 2rem;
-  height: 2rem;
+  width: 4rem;
+  height: 4rem;
 
   fill: var(--color-roadster-purple);
 
   grid-column-start: 1;
   grid-row-start: 1;
 
-  padding-left: 0.5rem;
-  padding-top: 0.5rem;
+  margin-left: var(--global-margin-smaller);
 }
 
 .c-tekst {
