@@ -84,7 +84,8 @@ html {
   #Elements
   \*------------------------------------*/
 body {
-  background-image: url(../img/NZ/IMG_3774.jpg);
+  background-image: url(../img/NZ/NZ_star5.png);
+  /* background-image: url(../img/NZ/IMG_3774.jpg); */
 
   background-position: center center;
   background-repeat: no-repeat;
