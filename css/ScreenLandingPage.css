@@ -79,7 +79,7 @@ html {
 }
 
 body {
-  background-image: url(../img/SpaceRoadsterBackgroundV2Mobile.png);
+  background-image: url(../img/NZ/NZ_star_mobile2.png);
 
   background-position: center center;
   background-repeat: no-repeat;
@@ -337,7 +337,7 @@ button:active {
 /* tablet */
 @media (min-width: 768px) {
   body {
-    background-image: url(../img/SRBackgroud2.png);
+    background-image: url(../img/NZ/NZ_star5.png);
   }
 
   .c-app {
@@ -396,7 +396,7 @@ button:active {
 /* desktop*/
 @media (min-width: 1200px) {
   body {
-    background-image: url(../img/SRBackgroud2.png);
+    background-image: url(../img/NZ/NZ_star5.png);
   }
   h1 {
     font-size: var(--global-fontsize-web-big);

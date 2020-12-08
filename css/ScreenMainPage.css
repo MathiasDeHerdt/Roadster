@@ -66,6 +66,13 @@
 html {
   color: var(--global-fontcolor);
 
+  background-image: url(../img/NZ/IMG_3774.jpg);
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
   font-size: var(--global-font-size-regular);
   font-family: arial, Helvetica, sans-serif;
 
@@ -75,18 +82,6 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-body {
-  background-image: url(../img/StarBackground2.jpg);
-
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  margin: 0;
-  padding: 0;
-}
-
 /*------------------------------------*\
   #Elements
   \*------------------------------------*/
@@ -130,11 +125,9 @@ ul {
 ul li {
   font-size: var(--global-font-size-semi-big);
   display: flex;
-  height: 1rem;
   padding: 0.5rem;
   padding-left: 0.2rem;
 
-  border-top: 0.125rem;
   transition: all 0.5s;
   opacity: 0;
   line-height: 1;
