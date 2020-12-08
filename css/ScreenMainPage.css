@@ -48,6 +48,9 @@
   --global-fontsize-web: 1.25rem;
   --global-fontsize-web-big: 2.25rem;
 
+  --global-font-weight-regular: 400;
+  --global-font-weight-medium: 600;
+
   /* Measurements*/
   --global-padding-top: 1.875rem;
   --global-canvas-width-hight: 37.5rem;
@@ -74,7 +77,7 @@ html {
   background-size: cover;
 
   font-size: var(--global-font-size-regular);
-  font-family: arial, Helvetica, sans-serif;
+  font-family: Helvetica, arial, sans-serif;
 
   font-feature-settings: 'zero' 1;
   line-height: 1;
@@ -94,7 +97,7 @@ h1 {
   grid-column-start: 1;
   grid-row-start: 2;
 
-  font-weight: bold;
+  font-weight: var(--global-font-weight-medium);
   font-size: var(--global-font-size-big);
 }
 
@@ -212,7 +215,7 @@ input[type='checkbox'] {
 
 .c-label {
   font-size: var(--global-font-size-big);
-  font-weight: bold;
+  font-weight: var(--global-font-weight-medium);
 
   color: var(--color-white);
 }
@@ -357,7 +360,7 @@ input[type='checkbox'] {
     grid-column-start: 2;
     grid-row-start: 1;
 
-    font-weight: bold;
+    font-weight: var(--global-font-weight-medium);
     font-size: var(--global-fontsize-web-big);
   }
   li {
@@ -454,7 +457,7 @@ input[type='checkbox'] {
     grid-column-start: 2;
     grid-row-start: 1;
 
-    font-weight: bold;
+    font-weight: var(--global-font-weight-medium);
     font-size: var(--global-fontsize-web-big);
   }
   li {

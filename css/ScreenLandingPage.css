@@ -48,6 +48,9 @@
   --global-fontsize-web: 1.25rem;
   --global-fontsize-web-big: 2.25rem;
 
+  --global-font-weight-regular: 400;
+  --global-font-weight-medium: 600;
+
   /* email */
   --global-input-error-borderColor: var(--global-color-error);
   --global-input-focus-boxShadowSpread: 0 0 0 3px;
@@ -69,7 +72,7 @@ html {
   color: var(--global-fontcolor);
 
   font-size: var(--global-font-size-regular);
-  font-family: arial, Helvetica, sans-serif;
+  font-family: Helvetica, arial, sans-serif;
 
   font-feature-settings: 'zero' 1;
   line-height: 1;
@@ -96,10 +99,16 @@ h1 {
   align-items: center;
 
   font-size: var(--global-font-size-big);
+  font-weight: var(--global-font-weight-medium);
 
-  padding-top: 1.5rem;
+  padding-top: 1rem;
 
   line-height: 1;
+}
+
+span {
+  font-size: var(--global-fontsize-web);
+  font-weight: var(--global-font-weight-medium);
 }
 
 a {
@@ -209,7 +218,7 @@ button:active {
 
   appearance: none;
   width: auto;
-  font-weight: bold;
+  font-weight: var(--global-font-weight-medium);
 
   margin-left: var(--global-margin-small);
   margin-right: var(--global-margin-small);
@@ -274,7 +283,7 @@ button:active {
   right: 1.25rem;
   transition: all 200ms;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: var(--global-font-weight-medium);
   text-decoration: none;
   color: var(--color-grey);
 }
@@ -308,7 +317,7 @@ button:active {
   margin-left: var(--global-margin-small);
   margin-bottom: var(--global-margin-small);
 
-  font-weight: bold;
+  font-weight: var(--global-font-weight-medium);
   visibility: visible;
 }
 
@@ -337,7 +346,7 @@ button:active {
 /* tablet */
 @media (min-width: 768px) {
   body {
-    background-image: url(../img/NZ/NZ_star5.png);
+    background-image: url(../img/NZ/LandingPageBackgroundWeb.png);
   }
 
   .c-app {
@@ -395,9 +404,9 @@ button:active {
 
 /* desktop*/
 @media (min-width: 1200px) {
-  body {
+  /* body {
     background-image: url(../img/NZ/NZ_star5.png);
-  }
+  } */
   h1 {
     font-size: var(--global-fontsize-web-big);
   }
