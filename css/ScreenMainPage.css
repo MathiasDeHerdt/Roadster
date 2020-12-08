@@ -66,8 +66,6 @@
 html {
   color: var(--global-fontcolor);
 
-  background-image: url(../img/NZ/IMG_3774.jpg);
-
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -85,7 +83,14 @@ html {
 /*------------------------------------*\
   #Elements
   \*------------------------------------*/
+body {
+  background-image: url(../img/NZ/IMG_3774.jpg);
 
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 h1 {
   display: flex;
   justify-content: center;
