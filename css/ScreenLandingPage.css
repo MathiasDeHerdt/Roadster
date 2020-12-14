@@ -190,7 +190,7 @@ button:active {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 45%;
+  width: auto;
 
   margin-left: var(--global-margin-small);
 
@@ -355,9 +355,7 @@ button:active {
 
   .c-app {
     grid-template-columns: 10% auto auto 10%;
-    grid-template-rows: 10% auto 10%;
-
-    background-color: gold;
+    grid-template-rows: 2% auto 10%;
   }
 
   .c-img {
@@ -404,7 +402,30 @@ button:active {
 
 @media (min-width: 1000px) {
   .c-app {
-    background-color: green;
+    grid-template-columns: 10rem auto 20rem 35rem auto 10rem;
+    grid-template-rows: 5rem auto 10%;
+  }
+
+  .c-img {
+    grid-row-start: 2;
+    grid-column-start: 3;
+  }
+  .c-tekst {
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+    grid-row-start: 2;
+    grid-column-start: 4;
+
+    line-height: 1.5;
+
+    font-size: var(--global-fontsize-web);
+  }
+
+  .c-tekst__lower {
+    grid-row-start: 3;
+    grid-column-start: 4;
   }
 }
 
@@ -413,7 +434,6 @@ button:active {
   .c-app {
     grid-template-columns: auto 17% 25% auto;
     grid-template-rows: 5rem 28.125rem 6.25rem;
-    background-color: hotpink;
   }
 
   .c-img {
