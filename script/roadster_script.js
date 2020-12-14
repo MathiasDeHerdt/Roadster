@@ -235,7 +235,7 @@ const drawPlanet = function(planet, clr, X, Y, angle, MaA, MiA){
     //anticlockwise Optional
     //ctx.arc(xvalue, yvalue, 5, 0, 2 * Math.PI)
 
-    ctx.arc(xvalue, yvalue, 5, 0, 2 * Math.PI)
+    ctx.arc(xvalue, yvalue, 10, 0, 2 * Math.PI)
     ctx.fill()
 }
 
@@ -262,6 +262,7 @@ const drawPlanetOrbit = function(Planet, Clr, X, Y, MaA, MiA){
     var radiusx = MaA/2;
     var radiusy = MiA/2;
     ctx.beginPath();
+    ctx.lineWidth = 3;
 
     //ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
     //x           The x-axis (horizontal) coordinate of the ellipse's center.
