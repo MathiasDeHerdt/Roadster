@@ -10,6 +10,16 @@ const DivisionFactor = 1000000;
 const AU = 149597871;     //(1 AU = 149597871 km)
 const WriteDebugInfo = "off"
 const DrawLines = "off"
+
+
+
+// function myCallback() {
+//     console.log("TEST1")
+// }
+   
+// function myCallback2() {
+//     console.log("TEST2")
+// }
     
 
 // =========================
@@ -32,20 +42,54 @@ async function getRoadsterData(){
     const inclination = data.inclination;
     const longitude = data.longitude;
     const days = data.period_days;
+
     const speed = data.speed_kph;
+    const speedMile = data.speed_mph;
+
     const Edistance = data.earth_distance_km;
+    const EdistanceMile = data.earth_distance_mi;
+
     const Mdistance = data.mars_distance_km;
+    const MdistanceMile = data.mars_distance_mi;
+
 
     // Date yyyy-mm-dd converteren to dd-mm-yyyy
     const dateSplit = date.split('T')[0]
     const dateOld = dateSplit.split('-')
     const newDate = [dateOld[2],dateOld[1],dateOld[0]].join("-");
 
+    // Metric
     const formattedSpeed = `${Math.round((speed*100)/100)} km/u`
-    const formattedDate = `${newDate}`
-    const formattedDays = `${Math.floor(days)} days`
     const formattedEarthDistance = `${Math.floor(Edistance)} km`
     const formattedMarsDistance = `${Math.floor(Mdistance)} km`
+
+    // Imperial
+    const formattedSpeedMile = `${Math.round((speedMile*100)/100)} mph`;
+    const formattedEarthDistanceMile = `${Math.floor(EdistanceMile)} mile`
+    const formattedMarsDistanceMile = `${Math.floor(MdistanceMile)} mile`;
+
+    // Standard
+    const formattedDate = `${newDate}`
+    const formattedDays = `${Math.floor(days)} days`
+
+    var changeToImperial = window.setInterval(imperial, 5000);
+    var changeToMetric = window.setInterval(metric, 10000);
+
+    function metric() {
+        document.getElementById('Speed_Roadster').innerHTML = formattedSpeed;
+        document.getElementById('LaunchDate_Roadster').innerHTML = formattedDate
+        document.getElementById('Days_Roadster').innerHTML = formattedDays
+        document.getElementById('DistanceEarth').innerHTML = formattedEarthDistance
+        document.getElementById('DistanceMars').innerHTML = formattedMarsDistance
+    }
+   
+    function imperial() {
+        document.getElementById('Speed_Roadster').innerHTML = formattedSpeedMile;
+        document.getElementById('LaunchDate_Roadster').innerHTML = formattedDate
+        document.getElementById('Days_Roadster').innerHTML = formattedDays
+        document.getElementById('DistanceEarth').innerHTML = formattedEarthDistanceMile
+        document.getElementById('DistanceMars').innerHTML = formattedMarsDistanceMile
+    }
 
     // Send data to html
     document.getElementById('Speed_Roadster').innerHTML = formattedSpeed;

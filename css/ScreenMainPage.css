@@ -384,8 +384,6 @@ input[type='checkbox'] {
     justify-content: center;
     display: flex;
     position: relative;
-
-    background-color: green;
   }
 
   .c-solarsystem__sun {
@@ -481,8 +479,6 @@ input[type='checkbox'] {
     justify-content: center;
     display: flex;
     position: relative;
-
-    background-color: hotpink;
   }
 
   .c-solarsystem__sun {
