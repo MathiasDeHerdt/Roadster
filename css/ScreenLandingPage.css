@@ -349,17 +349,20 @@ button:active {
     background-image: url(../img/NZ/LandingPageBackgroundWeb.png);
   }
 
+  h1 {
+    font-size: var(--global-fontsize-web-big);
+  }
+
   .c-app {
-    grid-template-columns: 32rem 17rem 25rem;
-    grid-template-rows: 6rem 28.125rem 6.25rem;
+    grid-template-columns: 10% auto auto 10%;
+    grid-template-rows: 10% auto 10%;
+
+    background-color: gold;
   }
 
   .c-img {
     grid-row-start: 2;
-    grid-row-end: 2;
-
     grid-column-start: 2;
-    grid-column-end: 3;
   }
   .c-tekst {
     display: block;
@@ -367,14 +370,11 @@ button:active {
     align-items: center;
 
     grid-row-start: 2;
-    grid-row-end: 4;
-
     grid-column-start: 3;
-    grid-column-end: 3;
 
     line-height: 1.5;
 
-    margin-left: var(--global-margin-big);
+    font-size: var(--global-fontsize-web);
   }
 
   .c-tekst__lower {
@@ -402,28 +402,27 @@ button:active {
   }
 }
 
-/* desktop*/
-@media (min-width: 1200px) {
-  /* body {
-    background-image: url(../img/NZ/NZ_star5.png);
-  } */
-  h1 {
-    font-size: var(--global-fontsize-web-big);
-  }
-
+@media (min-width: 1000px) {
   .c-app {
-    grid-template-columns: 38rem 18rem 30rem;
-    grid-template-rows: 6rem 28.125rem 6.25rem;
+    background-color: green;
+  }
+}
+
+/* desktop*/
+@media (min-width: 1700px) {
+  .c-app {
+    grid-template-columns: auto 17% 25% auto;
+    grid-template-rows: 5rem 28.125rem 6.25rem;
+    background-color: hotpink;
   }
 
   .c-img {
-    grid-row-start: 2;
-    grid-row-end: 2;
+    display: block;
+    justify-content: center;
+    align-items: center;
 
+    grid-row-start: 2;
     grid-column-start: 2;
-    grid-column-end: 3;
-    width: 18rem;
-    height: 36.4375rem;
   }
   .c-tekst {
     display: block;
@@ -431,17 +430,16 @@ button:active {
     align-items: center;
 
     grid-row-start: 2;
-    grid-row-end: 4;
-
     grid-column-start: 3;
-    grid-column-end: 3;
 
     line-height: 1.5;
-
-    font-size: var(--global-fontsize-web);
   }
 
   .c-tekst__lower {
+    display: block;
+    justify-content: center;
+    align-items: center;
+
     grid-row-start: 3;
     grid-column-start: 3;
   }

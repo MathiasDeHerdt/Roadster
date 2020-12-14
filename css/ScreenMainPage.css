@@ -384,6 +384,8 @@ input[type='checkbox'] {
     justify-content: center;
     display: flex;
     position: relative;
+
+    background-color: green;
   }
 
   .c-solarsystem__sun {
@@ -409,6 +411,8 @@ input[type='checkbox'] {
 
     grid-column-start: 2;
     grid-row-start: 3;
+
+    padding: 1rem;
   }
 
   .c-tekst__lower {
@@ -426,6 +430,8 @@ input[type='checkbox'] {
     margin-right: var(--global-margin);
 
     padding-top: 3rem;
+
+    padding: 1rem;
   }
 
   .c-circle__earth {
@@ -443,12 +449,6 @@ input[type='checkbox'] {
 
 /* desktop*/
 @media (min-width: 1200px) {
-  .c-app {
-    display: grid;
-
-    grid-template-columns: 20rem auto 20rem;
-    grid-template-rows: 10rem 30rem 4.5rem auto;
-  }
   h1 {
     display: flex;
     justify-content: center;
@@ -481,6 +481,8 @@ input[type='checkbox'] {
     justify-content: center;
     display: flex;
     position: relative;
+
+    background-color: hotpink;
   }
 
   .c-solarsystem__sun {
@@ -497,26 +499,30 @@ input[type='checkbox'] {
     display: flex;
     justify-content: space-between;
 
-    font-size: var(--global-fontsize-web);
-
-    margin-left: 20rem;
-    margin-right: 20rem;
-
     grid-column-start: 2;
     grid-row-start: 3;
+
+    font-size: var(--global-fontsize-web);
+
+    margin-left: 10rem;
+    margin-right: 10rem;
+
+    padding: 1rem;
   }
 
   .c-tekst__lower {
     display: flex;
     justify-content: space-between;
 
-    font-size: var(--global-fontsize-web);
-
     grid-column-start: 2;
     grid-row-start: 4;
 
-    margin-left: 20rem;
-    margin-right: 20rem;
+    font-size: var(--global-fontsize-web);
+
+    margin-left: 10rem;
+    margin-right: 10rem;
+
+    padding: 1rem;
 
     padding-top: 3rem;
   }
