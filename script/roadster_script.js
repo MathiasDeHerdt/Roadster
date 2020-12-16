@@ -11,17 +11,6 @@ const AU = 149597871;     //(1 AU = 149597871 km)
 const WriteDebugInfo = "off"
 const DrawLines = "off"
 
-
-
-// function myCallback() {
-//     console.log("TEST1")
-// }
-   
-// function myCallback2() {
-//     console.log("TEST2")
-// }
-    
-
 // =========================
 // Function - data from API
 // =========================
@@ -56,7 +45,7 @@ async function getRoadsterData(){
     // Date yyyy-mm-dd converteren to dd-mm-yyyy
     const dateSplit = date.split('T')[0]
     const dateOld = dateSplit.split('-')
-    const newDate = [dateOld[2],dateOld[1],dateOld[0]].join("-");
+    const newDate = [dateOld[2],"Feb",dateOld[0]].join("-");
 
     // Metric
     const formattedSpeed = `${Math.round((speed*100)/100)} km/u`
@@ -135,7 +124,6 @@ const drawXYaxes = function(){
         ctx.stroke();
     }
 }
-
 
 // =========================
 // Function - position of the planet in the orbit
@@ -330,7 +318,7 @@ var Earth = function(){
     WriteConsoleLogging("Earth")
     WriteConsoleLogging("-----")
 
-    const EarthPeriApsisKM = 147098291
+    const EarthPeriApsisKM = 147098291 // https://en.wikipedia.org/wiki/Apsis
     const EarthApoApsisKM = 152098233
     const EarthEccentricity = (EarthApoApsisKM-EarthPeriApsisKM)/(EarthApoApsisKM+EarthPeriApsisKM)
     const EarthMajorAxisKM = EarthApoApsisKM + EarthPeriApsisKM
@@ -342,7 +330,7 @@ var Earth = function(){
     const EarthCentralPointXDivided = EarthCentralPointKMX / DivisionFactor
     const EarthMajorAxisDivided = EarthMajorAxisKM / DivisionFactor
     const EarthMinorAxisDivided = EarthMinorAxisKM / DivisionFactor
-    const EarthHelioCentricLongitude_1Nov2020 = 39
+    const EarthHelioCentricLongitude_1Nov2020 = 39 // https://planetarium.wvu.edu/files/d/e0ba9626-6377-4fff-8589-16ec25f27712/heliocentric-longitudes-2020pdf.pdf
     const EarthDaysPerOrbitPeriod = 365.256
     const EarthDegreesPerDay = 360 / EarthDaysPerOrbitPeriod
 
@@ -425,6 +413,102 @@ var Mars = function(){
     drawPlanet("Mars", "Red", MarsCentralPointXDivided, 7, MarsHelioCentricLongitudeNow, MarsMajorAxisDivided, MarsMinorAxisDivided)
 }
 
+var Venus = function(){
+    WriteConsoleLogging("Venus")
+    WriteConsoleLogging("----")
+
+    const VenusPeriApsisKM = 107476170
+    const VenusApoApsisKM = 108942780
+    const VenusEccentricity = (VenusApoApsisKM-VenusPeriApsisKM)/(VenusApoApsisKM+VenusPeriApsisKM)
+    const VenusMajorAxisKM = VenusApoApsisKM + VenusPeriApsisKM
+    const VenusSemiMajorAxisKM = VenusMajorAxisKM / 2
+    const VenusSemiMinorAxisKM = VenusSemiMajorAxisKM * Math.sqrt(1-(VenusEccentricity*VenusEccentricity))
+    const VenusMinorAxisKM = VenusSemiMinorAxisKM * 2
+    const MarsCentralPointKMY = 0
+    const VenusCentralPointKMX = -VenusApoApsisKM + VenusSemiMajorAxisKM
+    const VenusCentralPointXDivided = VenusCentralPointKMX / DivisionFactor
+    const VenusMajorAxisDivided = VenusMajorAxisKM / DivisionFactor
+    const VenusMinorAxisDivided = VenusMinorAxisKM / DivisionFactor
+    const VenusHelioCentricLongitude_1Nov2020 = 134
+    const VenusDaysPerOrbitPeriod = 255
+    const VenusDegreesPerDay = 360 / VenusDaysPerOrbitPeriod
+
+    WriteConsoleLogging("period = " + VenusDaysPerOrbitPeriod + " degreesperday = " + VenusDegreesPerDay)
+
+    var StartDate = new Date("11/01/2020") //.toLocaleDateString("nl-be")
+    var Today = new Date() //.toLocaleDateString("nl-be")
+
+    WriteConsoleLogging("Today = " + Today + " " + StartDate)
+
+    var Days2Add = (Today.getTime() - StartDate.getTime()) /(1000 * 60 * 60 * 24);
+
+    WriteConsoleLogging("Days = " + Days2Add)
+
+    const VenusHelioCentricLongitudeNow = VenusHelioCentricLongitude_1Nov2020 + (Days2Add*VenusDegreesPerDay)
+
+    WriteConsoleLogging("Real values:")
+    WriteConsoleLogging("  - ApoApsis  = " + VenusApoApsisKM + "km")
+    WriteConsoleLogging("  - PeriApsis = " + VenusPeriApsisKM + "km")
+    WriteConsoleLogging("  - MajorAxis = " + VenusMajorAxisKM + "km")
+    WriteConsoleLogging("  - MinorAxis = " + VenusMinorAxisKM + "km") 
+    WriteConsoleLogging("  - Heliocentric longitude = " + VenusHelioCentricLongitudeNow + "°")
+    WriteConsoleLogging("Scaled values (/" + DivisionFactor + "):")
+    WriteConsoleLogging("  - MajorAxisScaled = " + VenusMajorAxisDivided + "km")
+    WriteConsoleLogging("  - MinorAxisScaled = " + VenusMinorAxisDivided + "km") 
+    WriteConsoleLogging("  - CentreX = " + VenusCentralPointXDivided)
+    
+    drawPlanetOrbit("Venus","White", VenusCentralPointXDivided, 7, VenusMajorAxisDivided, VenusMinorAxisDivided)
+    drawPlanet("Venus", "White", VenusCentralPointXDivided, 7, VenusHelioCentricLongitudeNow, VenusMajorAxisDivided, VenusMinorAxisDivided)
+}
+
+var Mercury = function(){
+    WriteConsoleLogging("Mercury")
+    WriteConsoleLogging("----")
+
+    const MercuryPeriApsisKM = 46001009
+    const MercuryApoApsisKM = 69817445 
+    const MercuryEccentricity = (MercuryApoApsisKM-MercuryPeriApsisKM)/(MercuryApoApsisKM+MercuryPeriApsisKM)
+    const MercuryMajorAxisKM = MercuryApoApsisKM + MercuryPeriApsisKM
+    const MercurySemiMajorAxisKM = MercuryMajorAxisKM / 2
+    const MercurySemiMinorAxisKM = MercurySemiMajorAxisKM * Math.sqrt(1-(MercuryEccentricity*MercuryEccentricity))
+    const MercuryMinorAxisKM = MercurySemiMinorAxisKM * 2
+    const MercuryCentralPointKMY = 0
+    const MercuryCentralPointKMX = -MercuryApoApsisKM + MercurySemiMajorAxisKM
+    const MercuryCentralPointXDivided = MercuryCentralPointKMX / DivisionFactor
+    const MercuryMajorAxisDivided = MercuryMajorAxisKM / DivisionFactor
+    const MercuryMinorAxisDivided = MercuryMinorAxisKM / DivisionFactor
+    const MercuryHelioCentricLongitude_1Nov2020 = 70
+    const MercuryDaysPerOrbitPeriod = 88
+    const MercuryDegreesPerDay = 360 / MercuryDaysPerOrbitPeriod
+
+    WriteConsoleLogging("period = " + MercuryDaysPerOrbitPeriod + " degreesperday = " + MercuryDegreesPerDay)
+
+    var StartDate = new Date("11/01/2020") //.toLocaleDateString("nl-be")
+    var Today = new Date() //.toLocaleDateString("nl-be")
+
+    WriteConsoleLogging("Today = " + Today + " " + StartDate)
+
+    var Days2Add = (Today.getTime() - StartDate.getTime()) /(1000 * 60 * 60 * 24);
+
+    WriteConsoleLogging("Days = " + Days2Add)
+
+    const MercuryHelioCentricLongitudeNow = MercuryHelioCentricLongitude_1Nov2020 + (Days2Add*MercuryDegreesPerDay)
+
+    WriteConsoleLogging("Real values:")
+    WriteConsoleLogging("  - ApoApsis  = " + MercuryApoApsisKM + "km")
+    WriteConsoleLogging("  - PeriApsis = " + MercuryPeriApsisKM + "km")
+    WriteConsoleLogging("  - MajorAxis = " + MercuryMajorAxisKM + "km")
+    WriteConsoleLogging("  - MinorAxis = " + MercuryMinorAxisKM + "km") 
+    WriteConsoleLogging("  - Heliocentric longitude = " + MercuryHelioCentricLongitudeNow + "°")
+    WriteConsoleLogging("Scaled values (/" + DivisionFactor + "):")
+    WriteConsoleLogging("  - MajorAxisScaled = " + MercuryMajorAxisDivided + "km")
+    WriteConsoleLogging("  - MinorAxisScaled = " + MercuryMinorAxisDivided + "km") 
+    WriteConsoleLogging("  - CentreX = " + MercuryCentralPointXDivided)
+    
+    drawPlanetOrbit("Mercury","green", MercuryCentralPointXDivided, 7, MercuryMajorAxisDivided, MercuryMinorAxisDivided)
+    drawPlanet("Mercury", "green", MercuryCentralPointXDivided, 7, MercuryHelioCentricLongitudeNow, MercuryMajorAxisDivided, MercuryMinorAxisDivided)
+}
+
 // =========================
 // Function - Roadster calculations with data from api
 // =========================
@@ -499,6 +583,8 @@ document.addEventListener('DOMContentLoaded', function() {
     WelcomeMessage()
     drawXYaxes()
     getRoadsterData()
+    // Mercury()
+    // Venus()
     Earth()
     Mars()
 });
