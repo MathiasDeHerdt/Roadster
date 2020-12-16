@@ -451,7 +451,7 @@ input[type='checkbox'] {
 
   .c-app {
     grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 10rem 30rem 2rem;
+    grid-template-rows: 10rem 40rem 2rem;
   }
 
   .c-info {
