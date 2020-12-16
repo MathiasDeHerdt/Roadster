@@ -583,8 +583,8 @@ document.addEventListener('DOMContentLoaded', function() {
     WelcomeMessage()
     drawXYaxes()
     getRoadsterData()
-    // Mercury()
-    // Venus()
+    Mercury()
+    Venus()
     Earth()
     Mars()
 });
