@@ -457,8 +457,8 @@ var Venus = function(){
     WriteConsoleLogging("  - MinorAxisScaled = " + VenusMinorAxisDivided + "km") 
     WriteConsoleLogging("  - CentreX = " + VenusCentralPointXDivided)
     
-    drawPlanetOrbit("Venus","White", VenusCentralPointXDivided, 0, VenusMajorAxisDivided, VenusMinorAxisDivided)
-    drawPlanet("Venus", "White", VenusCentralPointXDivided, 0, VenusHelioCentricLongitudeNow, VenusMajorAxisDivided, VenusMinorAxisDivided)
+    drawPlanetOrbit("Venus","orange", VenusCentralPointXDivided, 0, VenusMajorAxisDivided, VenusMinorAxisDivided)
+    drawPlanet("Venus", "orange", VenusCentralPointXDivided, 0, VenusHelioCentricLongitudeNow, VenusMajorAxisDivided, VenusMinorAxisDivided)
 }
 
 var Mercury = function(){
@@ -505,8 +505,8 @@ var Mercury = function(){
     WriteConsoleLogging("  - MinorAxisScaled = " + MercuryMinorAxisDivided + "km") 
     WriteConsoleLogging("  - CentreX = " + MercuryCentralPointXDivided)
     
-    drawPlanetOrbit("Mercury","green", MercuryCentralPointXDivided, -13, MercuryMajorAxisDivided, MercuryMinorAxisDivided)
-    drawPlanet("Mercury", "green", MercuryCentralPointXDivided, -13, MercuryHelioCentricLongitudeNow, MercuryMajorAxisDivided, MercuryMinorAxisDivided)
+    drawPlanetOrbit("Mercury","mediumseagreen", MercuryCentralPointXDivided, -13, MercuryMajorAxisDivided, MercuryMinorAxisDivided)
+    drawPlanet("Mercury", "mediumseagreen", MercuryCentralPointXDivided, -13, MercuryHelioCentricLongitudeNow, MercuryMajorAxisDivided, MercuryMinorAxisDivided)
 }
 
 // =========================
