@@ -137,7 +137,7 @@ ul li {
 }
 
 li {
-  width: 65%;
+  width: 10rem;
   margin-left: var(--global-margin-small);
   background-color: var(--color-dark-transparant);
 }
@@ -241,7 +241,7 @@ input[type='checkbox'] {
   grid-column-start: 1;
   grid-row-start: 4;
 
-  padding-left: 2rem;
+  padding-left: 1rem;
   padding-right: 2rem;
 
   padding-top: 2rem;
@@ -300,6 +300,7 @@ input[type='checkbox'] {
   width: 1rem;
   height: 1rem;
   background-color: var(--color-light-blue);
+  margin-left: 1rem;
 }
 
 .c-circle__mars {
@@ -307,6 +308,21 @@ input[type='checkbox'] {
   width: 1rem;
   height: 1rem;
   background-color: var(--color-mars-red);
+}
+
+.c-circle__venus {
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  margin-left: -.7rem;
+}
+
+.c-circle__mercury {
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  background-color: green;
 }
 
 .c-circle__roadster {
@@ -336,6 +352,26 @@ input[type='checkbox'] {
 
   .c-tekst__lower {
     margin-top: var(--global-margin-big);
+  }
+
+  .c-circle__earth {
+    margin-left: 1rem;
+  }
+
+  .c-circle__mars {
+    margin-right: 0rem;
+  }
+
+  .c-circle__venus {
+    margin-left: 0rem;
+  }
+
+  .c-circle__mercury {
+    margin-left: .5rem;
+  }
+
+  .c-circle__roadster {
+    margin-left: 0rem;
   }
 }
 
@@ -420,11 +456,19 @@ input[type='checkbox'] {
   }
 
   .c-circle__earth {
-    margin-left: 2.5rem;
+    margin-left: 2rem;
   }
 
   .c-circle__mars {
-    margin-right: 2.2rem;
+    margin-right: 2rem;
+  }
+
+  .c-circle__venus {
+    margin-left: -.5rem;
+  }
+
+  .c-circle__mercury {
+    margin-left: 1rem;
   }
 
   .c-circle__roadster {
@@ -490,10 +534,7 @@ input[type='checkbox'] {
     grid-column-start: 2;
     grid-row-start: 3;
 
-    padding-left: 10rem;
-    padding-right: 10rem;
-
-    padding: 1rem;
+    padding: 0rem;
   }
 
   .c-tekst__lower {
@@ -514,11 +555,19 @@ input[type='checkbox'] {
   }
 
   .c-circle__earth {
-    margin-left: 10rem;
+    margin-left: 11rem;
   }
 
   .c-circle__mars {
-    margin-right: 10rem;
+    margin-right: 11rem;
+  }
+
+  .c-circle__venus {
+    margin-left: -.7rem;
+  }
+
+  .c-circle__mercury {
+    margin-left: 1rem;
   }
 
   .c-circle__roadster {
