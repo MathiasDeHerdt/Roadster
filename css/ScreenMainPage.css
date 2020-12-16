@@ -359,11 +359,11 @@ input[type='checkbox'] {
   }
 
   .c-circle__mars {
-    margin-right: 0rem;
+    margin-right: .5rem;
   }
 
   .c-circle__venus {
-    margin-left: 0rem;
+    margin-left: -.7rem;
   }
 
   .c-circle__mercury {
@@ -371,7 +371,7 @@ input[type='checkbox'] {
   }
 
   .c-circle__roadster {
-    margin-left: 0rem;
+    margin-left: .5rem;
   }
 }
 
@@ -472,7 +472,7 @@ input[type='checkbox'] {
   }
 
   .c-circle__roadster {
-    margin-left: 0rem;
+    margin-left: 0.2rem;
   }
 }
 
@@ -571,6 +571,6 @@ input[type='checkbox'] {
   }
 
   .c-circle__roadster {
-    margin-left: 0rem;
+    margin-left: 1rem;
   }
 }
