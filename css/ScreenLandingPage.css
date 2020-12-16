@@ -3,12 +3,13 @@
 \*------------------------------------*/
 
 :root {
+  /* colors*/
   --color-light: #f9f9f9;
   --color-dark: #171717;
   --color-white: #fff;
   --color-grey: #333;
   --color-light-blue: #6483ff;
-  --color-dark-transparant: rgba(0, 0, 0, 0.726);
+  --color-dark-transparant: #000000b9;
   --global-hover-color: #6583fac4;
   --global-pressed-color: #3053e0;
   --global-color-error: #ff3333;
@@ -178,14 +179,6 @@ button:active {
   grid-column-start: 1;
 }
 
-.box {
-  width: 70%;
-}
-.popup {
-  width: 70%;
-  font-size: var(--global-font-size-regular);
-}
-
 .c-input-email {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -293,6 +286,14 @@ button:active {
 .popup .content {
   max-height: 30%;
   overflow: auto;
+}
+
+.box {
+  width: 70%;
+}
+.popup {
+  width: 70%;
+  font-size: var(--global-font-size-regular);
 }
 
 /* EMAIL */

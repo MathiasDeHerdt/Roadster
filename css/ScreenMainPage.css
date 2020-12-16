@@ -10,6 +10,8 @@
   --color-light-blue: #6483ff;
   --color-mars-red: #ff0000;
   --color-roadster-purple: #ee82ee;
+  --color-mercury-green: #3cb371;
+  --color-venus-orange: #ffa500;
   --global-hover-color: #6583fac4;
   --global-pressed-color: #3053e0;
   --color-dark-transparant: rgba(0, 0, 0, 0.726);
@@ -69,15 +71,16 @@
 html {
   color: var(--global-fontcolor);
 
+  font-size: var(--global-font-size-regular);
+  
+  font-family: Helvetica, arial, sans-serif;
+
   background-image: url(../img/NZ/NZ_star_main.png);
 
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-
-  font-size: var(--global-font-size-regular);
-  font-family: Helvetica, arial, sans-serif;
 
   font-feature-settings: 'zero' 1;
   line-height: 1;
@@ -314,7 +317,7 @@ input[type='checkbox'] {
   border-radius: 50%;
   width: 1rem;
   height: 1rem;
-  background-color: #ffa500;
+  background-color: var(--color-venus-orange);
   margin-left: -0.7rem;
 }
 
@@ -322,7 +325,7 @@ input[type='checkbox'] {
   border-radius: 50%;
   width: 1rem;
   height: 1rem;
-  background-color: #3cb371;
+  background-color: var(--color-mercury-green);
 }
 
 .c-circle__roadster {
@@ -394,6 +397,15 @@ input[type='checkbox'] {
   }
   li {
     background-color: transparent;
+  }
+
+  .c-svg {
+    display: flex;
+
+    fill: var(--color-roadster-purple);
+
+    grid-column-start: 1;
+    grid-row-start: 1;
   }
 
   .c-info {
