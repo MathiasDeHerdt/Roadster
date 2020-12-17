@@ -370,19 +370,19 @@ input[type='checkbox'] {
   }
 
   .c-circle__mars {
-    margin-right: 0.5rem;
+    margin-right: 0rem;
   }
 
   .c-circle__venus {
-    margin-left: 0.5rem;
+    margin-left: -0.2rem;
   }
 
   .c-circle__mercury {
-    margin-left: 0.5rem;
+    margin-left: 0rem;
   }
 
   .c-circle__roadster {
-    margin-left: 0.5rem;
+    margin-left: 0rem;
   }
 }
 
