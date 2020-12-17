@@ -328,6 +328,8 @@ button:active {
   --input-hover-borderColor: var(--global-input-error-borderColor);
   --input-focus-borderColor: var(--global-input-error-borderColor);
   --input-focus-boxShadowColor: var(--global-input-error-boxShadowColor);
+
+  font-size: var(--global-font-size-regular);
 }
 
 .c-invisible {
