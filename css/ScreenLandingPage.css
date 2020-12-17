@@ -138,9 +138,6 @@ button:active {
   grid-template-columns: auto;
   grid-template-rows: auto;
 }
-.c-input {
-  margin-left: var(--global-margin-smaller);
-}
 
 .c-img {
   display: flex;
@@ -153,6 +150,7 @@ button:active {
   margin-top: var(--global-margin-big);
 }
 
+/* Text */
 .c-tekst {
   display: inline-block;
   vertical-align: text-bottom;
@@ -177,6 +175,11 @@ button:active {
 
   grid-row-start: 2;
   grid-column-start: 1;
+}
+
+/* Inputs */
+.c-input {
+  margin-left: var(--global-margin-smaller);
 }
 
 .c-input-email {
@@ -236,7 +239,7 @@ button:active {
   transition: all 0.5s ease-out;
 }
 
-/* Popup message*/
+/* Popup message */
 .overlay {
   position: fixed;
   top: 0;
@@ -328,8 +331,6 @@ button:active {
   --input-hover-borderColor: var(--global-input-error-borderColor);
   --input-focus-borderColor: var(--global-input-error-borderColor);
   --input-focus-boxShadowColor: var(--global-input-error-boxShadowColor);
-
-  font-size: var(--global-font-size-regular);
 }
 
 .c-invisible {

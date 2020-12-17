@@ -200,16 +200,6 @@ input[type='checkbox'] {
   z-index: 1;
 }
 
-.c-solarsystem__sun {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 2rem;
-  height: 2rem;
-
-  z-index: 1;
-}
 .c-info {
   padding-top: 0rem;
   grid-row-start: 1;
@@ -225,6 +215,7 @@ input[type='checkbox'] {
   color: var(--color-white);
 }
 
+/* SVG and images */
 .c-svg {
   display: flex;
 
@@ -243,6 +234,17 @@ input[type='checkbox'] {
   display: none;
 }
 
+.c-solarsystem__sun {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+
+  z-index: 1;
+}
+/* Text */
 .c-tekst {
   display: flex;
   align-items: center;
@@ -300,6 +302,7 @@ input[type='checkbox'] {
   padding: 0;
 }
 
+/* Circle */
 .c-circle {
   display: flex;
   justify-content: space-between;
