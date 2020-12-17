@@ -267,8 +267,15 @@ const drawPlanet = function(planet, clr, X, Y, angle, MaA, MiA){
     //anticlockwise Optional
     //ctx.arc(xvalue, yvalue, 5, 0, 2 * Math.PI)
 
-    ctx.arc(xvalue, yvalue, 10, 0, 2 * Math.PI)
-    ctx.fill()
+    if (planet == "Roadster") {
+        var img1=document.getElementById("tesla");
+        px=60
+        ctx.drawImage(img1, xvalue-(px/2), yvalue-(px/2), px, px);
+    }
+    else {
+        ctx.arc(xvalue, yvalue, 10, 0, 2 * Math.PI)
+        ctx.fill()
+    }
 }
 
 // =========================

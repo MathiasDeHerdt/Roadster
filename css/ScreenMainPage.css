@@ -72,7 +72,7 @@ html {
   color: var(--global-fontcolor);
 
   font-size: var(--global-font-size-regular);
-  
+
   font-family: Helvetica, arial, sans-serif;
 
   background-image: url(../img/NZ/NZ_star_main.png);
@@ -129,14 +129,17 @@ ul {
 }
 
 ul li {
-  font-size: var(--global-font-size-semi-big);
   display: flex;
+
+  font-size: var(--global-font-size-semi-big);
+
   padding: 0.5rem;
   padding-left: 0.2rem;
-
-  transition: all 0.5s;
-  opacity: 0;
   line-height: 1;
+  transition: all 0.5s;
+
+  opacity: 0;
+  /* opacity: .5; */
 }
 
 li {
@@ -236,6 +239,10 @@ input[type='checkbox'] {
   margin-left: var(--global-margin-smaller);
 }
 
+.c-tesla {
+  display: none;
+}
+
 .c-tekst {
   display: flex;
   align-items: center;
@@ -318,21 +325,19 @@ input[type='checkbox'] {
   width: 1rem;
   height: 1rem;
   background-color: var(--color-venus-orange);
-  margin-left: -0.7rem;
+  margin-left: 0rem;
 }
 
 .c-circle__mercury {
   border-radius: 50%;
   width: 1rem;
   height: 1rem;
+  margin-right: .5rem;
   background-color: var(--color-mercury-green);
 }
 
 .c-circle__roadster {
-  border-radius: 50%;
-  width: 1rem;
-  height: 1rem;
-  background-color: var(--color-roadster-purple);
+  height: 2.5rem;
 }
 
 /*------------------------------------*\
@@ -397,6 +402,7 @@ input[type='checkbox'] {
   }
   li {
     background-color: transparent;
+    width: auto;
   }
 
   .c-svg {
