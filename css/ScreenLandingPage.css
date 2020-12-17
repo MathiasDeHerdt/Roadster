@@ -162,7 +162,7 @@ button:active {
 
   font-size: var(--global-font-size-regular);
 
-  line-height: 1;
+  line-height: 1.5;
 }
 
 .c-tekst__main {
@@ -364,15 +364,8 @@ button:active {
     grid-column-start: 2;
   }
   .c-tekst {
-    display: block;
-    justify-content: center;
-    align-items: center;
-
     grid-row-start: 2;
     grid-column-start: 3;
-
-    line-height: 1.5;
-
     font-size: var(--global-fontsize-web);
   }
 
@@ -412,16 +405,8 @@ button:active {
     grid-column-start: 3;
   }
   .c-tekst {
-    display: block;
-    justify-content: center;
-    align-items: center;
-
     grid-row-start: 2;
     grid-column-start: 4;
-
-    line-height: 1.5;
-
-    font-size: var(--global-fontsize-web);
   }
 
   .c-tekst__lower {
@@ -446,14 +431,8 @@ button:active {
     grid-column-start: 2;
   }
   .c-tekst {
-    display: block;
-    justify-content: center;
-    align-items: center;
-
     grid-row-start: 2;
     grid-column-start: 3;
-
-    line-height: 1.5;
   }
 
   .c-tekst__lower {
