@@ -1,7 +1,5 @@
 # Project - Where is Roadster
-(Work in Progress)
-
-Planned release date: 16/12/2020
+Online!
 
 ## Website URL
 https://mathiasdeherdt.github.io/Roadster/MainPage
