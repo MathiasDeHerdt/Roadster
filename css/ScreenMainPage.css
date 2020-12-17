@@ -485,15 +485,15 @@ input[type='checkbox'] {
   }
 
   .c-circle__venus {
-    margin-left: 0.5rem;
+    margin-left: 0.3rem;
   }
 
   .c-circle__mercury {
-    margin-left: 1rem;
+    margin-left: .8rem;
   }
 
   .c-circle__roadster {
-    margin-left: 0.7rem;
+    margin-left: 0.6rem;
   }
 }
 
@@ -588,10 +588,11 @@ input[type='checkbox'] {
   }
 
   .c-circle__mercury {
-    margin-left: 1rem;
+    margin-left: .7rem;
   }
 
   .c-circle__roadster {
     margin-left: 0.5rem;
   }
 }
+7
